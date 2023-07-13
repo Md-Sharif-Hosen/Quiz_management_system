@@ -25,3 +25,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::group( ['prefix'=>'education','middleware'=>['auth'] ],function(){
 Route::get('/website','WebsiteController@index');
 });
+
+Route::group( ['prefix'=>'admin','middleware'=>['auth'] ],function(){
+Route::get('/dashboard','AdminController@index');
+Route::get('/quizz','AdminController@quizz')->name('quizz');
+});

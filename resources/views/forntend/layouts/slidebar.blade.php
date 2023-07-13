@@ -1,4 +1,5 @@
-<section id="slider-part-3" class="bg_cover"  style="background-image: url(images/slider/s-3.jpg)">
+
+<section id="slider-part-3" class="bg_cover"  style="background-image: url({{ asset('assets/website') }}/images/slider/s-3.jpg)">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-10">
@@ -35,7 +36,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="singel-slider-feature justify-content-center mt-30">
                         <div class="icon">
-                            <img src="images/all-icon/man.png" alt="icon">
+                            <img src="{{ asset('assets/website') }}/images/all-icon/man.png" alt="icon">
                         </div>
                         <div class="cont">
                             <h3>13,0000</h3>
@@ -46,7 +47,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="singel-slider-feature justify-content-center mt-30">
                         <div class="icon">
-                            <img src="images/all-icon/book.png" alt="icon">
+                            <img src="{{ asset('assets/website') }}/images/all-icon/book.png" alt="icon">
                         </div>
                         <div class="cont">
                             <h3>4,000509</h3>
@@ -57,7 +58,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="singel-slider-feature justify-content-center mt-30">
                         <div class="icon">
-                            <img src="images/all-icon/expert.png" alt="icon">
+                            <img src="{{ asset('assets/website') }}/images/all-icon/expert.png" alt="icon">
                         </div>
                         <div class="cont">
                             <h3>Expert Instructor</h3>
