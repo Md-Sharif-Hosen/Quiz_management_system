@@ -18,4 +18,14 @@ class AdminController extends Controller
         //function_body
         return view('admin.quizzes');
     }
+    public function classes()
+    {
+        //function_body
+        return view('admin.classes');
+    }
+    public function questions()
+    {
+        //function_body
+        return view('admin.questions');
+    }
 }

@@ -29,4 +29,6 @@ Route::get('/website','WebsiteController@index');
 Route::group( ['prefix'=>'admin','middleware'=>['auth'] ],function(){
 Route::get('/dashboard','AdminController@index');
 Route::get('/quizz','AdminController@quizz')->name('quizz');
+Route::get('/classes','AdminController@classes')->name('classes');
+Route::get('/questions','AdminController@questions')->name('questions');
 });

@@ -1,160 +1,283 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<!-- Mirrored from eduadmin-template.multipurposethemes.com/bs4/main-dark/index2.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 13 Jul 2023 04:45:17 GMT -->
+
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="https:/eduadmin-template.multipurposethemes.com/bs4/images/favicon.ico">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"> </script>
-    <script
-    src="https://code.jquery.com/jquery-3.7.0.min.js"
-    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
-    crossorigin="anonymous"></script>
-    <title>EduAdmin - Dashboard</title>
 
-	<!-- Vendors Style-->
-	<link rel="stylesheet" href="{{ asset('assets/admin') }}/css/vendors_css.css">
+    <meta charset="utf-8" />
+    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="{{ asset('assets/admin/assets') }}/images/favicon.png">
 
-	<!-- Style-->
-	<link rel="stylesheet" href="{{ asset('assets/admin') }}/css/style.css">
-	<link rel="stylesheet" href="{{ asset('assets/admin') }}/css/skin_color.css">
+    <!-- Bootstrap Css -->
+    <link href="{{ asset('assets/admin/assets') }}/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="{{ asset('assets/admin/assets') }}/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="{{ asset('assets/admin/assets') }}/css/app.min.css" rel="stylesheet" type="text/css" />
 
-  </head>
 
-<body class="hold-transition dark-skin sidebar-mini theme-primary fixed">
+    <link href="{{ asset('assets/admin/assets') }}/css/custom.css" rel="stylesheet" type="text/css" />
 
-<div class="wrapper">
-	<div id="loader"></div>
+</head>
 
-  <header class="main-header">
-	<div class="d-flex align-items-center logo-box justify-content-start">
-		<a href="#" class="waves-effect waves-light nav-link d-none d-md-inline-block mx-10 push-btn bg-transparent" data-toggle="push-menu" role="button">
-			<span class="icon-Align-left"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
-		</a>
-		<!-- Logo -->
-		<a href="{{ asset('assets/admin') }}/index.html" class="logo">
-		  <!-- logo-->
-		  <div class="logo-lg">
-			  <span class="light-logo"><img src="{{ asset('assets/admin') }}/images/logo-dark-text.png" alt="logo"></span>
-			  <span class="dark-logo"><img src="{{ asset('assets/admin') }}/images/logo-light-text.png" alt="logo"></span>
-		  </div>
-		</a>
-	</div>
-    <!-- Header Navbar -->
-    <nav class="navbar navbar-static-top">
-      <!-- Sidebar toggle button-->
-	  <div class="app-menu">
-		<ul class="header-megamenu nav">
-		</ul>
-	  </div>
+<body data-sidebar="dark" data-layout-mode="light">
 
-      <div class="navbar-custom-menu r-side">
-        <ul class="nav navbar-nav">
-			<li class="btn-group nav-item d-lg-inline-flex d-none">
-				<a href="#" data-provide="fullscreen" class="waves-effect waves-light nav-link full-screen" title="Full Screen">
-					<i class="icon-Expand-arrows"><span class="path1"></span><span class="path2"></span></i>
-			    </a>
-			</li>
-			<li class="btn-group d-lg-inline-flex d-none">
-				<div class="app-menu">
-					<div class="search-bx mx-5">
-						<form>
-							<div class="input-group">
-							  <input type="search" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="button-addon2">
-							  <div class="input-group-append">
-								<button class="btn" type="submit" id="button-addon3"><i class="ti-search"></i></button>
-							  </div>
-							</div>
-						</form>
-					</div>
-				</div>
-			</li>
-		  <!-- Notifications -->
-		  <li class="dropdown notifications-menu">
-			<a href="#" class="waves-effect waves-light dropdown-toggle" data-toggle="dropdown" title="Notifications">
-			  <i class="icon-Notifications"><span class="path1"></span><span class="path2"></span></i>
-			</a>
-			<ul class="dropdown-menu animated bounceIn">
+    <!-- <body data-layout="horizontal" data-topbar="dark"> -->
 
-			  <li class="header">
-				<div class="p-20">
-					<div class="flexbox">
-						<div>
-							<h4 class="mb-0 mt-0">Notifications</h4>
-						</div>
-						<div>
-							<a href="#" class="text-danger">Clear All</a>
-						</div>
-					</div>
-				</div>
-			  </li>
+    <!-- Begin page -->
+    <div id="layout-wrapper">
 
-			  <li>
-				<!-- inner menu: contains the actual data -->
-				<ul class="menu sm-scrol">
-				  <li>
-					<a href="#">
-					  <i class="fa fa-users text-info"></i> Curabitur id eros quis nunc suscipit blandit.
-					</a>
-				  </li>
-				  <li>
-					<a href="#">
-					  <i class="fa fa-warning text-warning"></i> Duis malesuada justo eu sapien elementum, in semper diam posuere.
-					</a>
-				  </li>
-				  <li>
-					<a href="#">
-					  <i class="fa fa-users text-danger"></i> Donec at nisi sit amet tortor commodo porttitor pretium a erat.
-					</a>
-				  </li>
-				  <li>
-					<a href="#">
-					  <i class="fa fa-shopping-cart text-success"></i> In gravida mauris et nisi
-					</a>
-				  </li>
-				  <li>
-					<a href="#">
-					  <i class="fa fa-user text-danger"></i> Praesent eu lacus in libero dictum fermentum.
-					</a>
-				  </li>
-				  <li>
-					<a href="#">
-					  <i class="fa fa-user text-primary"></i> Nunc fringilla lorem
-					</a>
-				  </li>
-				  <li>
-					<a href="#">
-					  <i class="fa fa-user text-success"></i> Nullam euismod dolor ut quam interdum, at scelerisque ipsum imperdiet.
-					</a>
-				  </li>
-				</ul>
-			  </li>
-			  <li class="footer">
-				  <a href="#">View all</a>
-			  </li>
-			</ul>
-		  </li>
 
-	      <!-- User Account-->
-          <li class="dropdown user user-menu">
-            <a href="#" class="waves-effect waves-light dropdown-toggle" data-toggle="dropdown" title="User">
-				<i class="icon-User"><span class="path1"></span><span class="path2"></span></i>
-            </a>
-            <ul class="dropdown-menu animated flipInX">
-              <li class="user-body">
-				 <a class="dropdown-item" href="#"><i class="ti-user text-muted mr-2"></i> Profile</a>
-				 <a class="dropdown-item" href="#"><i class="ti-wallet text-muted mr-2"></i> My Wallet</a>
-				 <a class="dropdown-item" href="#"><i class="ti-settings text-muted mr-2"></i> Settings</a>
-				 <div class="dropdown-divider"></div>
-				 <a class="dropdown-item" href="#"><i class="ti-lock text-muted mr-2"></i> Logout</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+        <header id="page-topbar">
+            <div class="navbar-header">
+                <div class="d-flex">
+                    <!-- LOGO -->
+                    <div class="navbar-brand-box">
+                        <a href="index.html" class="logo logo-dark">
+                            <span class="logo-sm">
+                                <img src="{{ asset('assets/admin/assets') }}/images/logo.svg" alt=""
+                                    height="22">
+                            </span>
+                            <span class="logo-lg">
+                                <img src="{{ asset('assets/admin/assets') }}/images/logo-dark-text.png" alt=""
+                                    height="17">
+                            </span>
+                        </a>
+
+                        <a href="index.html" class="logo logo-light">
+                            <span class="logo-sm">
+                                <img src="{{ asset('assets/admin/assets') }}/images/logo-light-text.png" alt=""
+                                    height="22">
+                            </span>
+                            <span class="logo-lg">
+                                <img src="{{ asset('assets/admin/assets') }}/images/logo-light-text.png" alt=""
+                                    height="19">
+                            </span>
+                        </a>
+                    </div>
+
+                    <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect"
+                        id="vertical-menu-btn">
+                        <i class="fa fa-fw fa-bars"></i>
+                    </button>
+
+                    <!-- App Search-->
+                    <form class="app-search d-none d-lg-block">
+                        <div class="position-relative">
+                            <input type="text" class="form-control" placeholder="Search...">
+                            <span class="bx bx-search-alt"></span>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="d-flex">
+
+                    <div class="dropdown d-inline-block d-lg-none ms-2">
+                        <button type="button" class="btn header-item noti-icon waves-effect"
+                            id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <i class="mdi mdi-magnify"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                            aria-labelledby="page-header-search-dropdown">
+
+                            <form class="p-3">
+                                <div class="form-group m-0">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Search ..."
+                                            aria-label="Recipient's username">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="submit"><i
+                                                    class="mdi mdi-magnify"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="dropdown d-inline-block">
+                        <button type="button" class="btn header-item waves-effect" data-bs-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <img id="header-lang-img" src="{{ asset('assets/admin/assets') }}/images/flags/us.jpg"
+                                alt="Header Language" height="16">
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end">
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="en">
+                                <img src="{{ asset('assets/admin/assets') }}/images/flags/us.jpg" alt="user-image"
+                                    class="me-1" height="12"> <span class="align-middle">English</span>
+                            </a>
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="sp">
+                                <img src="{{ asset('assets/admin/assets') }}/images/flags/spain.jpg" alt="user-image"
+                                    class="me-1" height="12"> <span class="align-middle">Spanish</span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="gr">
+                                <img src="{{ asset('assets/admin/assets') }}/images/flags/germany.jpg"
+                                    alt="user-image" class="me-1" height="12"> <span
+                                    class="align-middle">German</span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="it">
+                                <img src="{{ asset('assets/admin/assets') }}/images/flags/italy.jpg" alt="user-image"
+                                    class="me-1" height="12"> <span class="align-middle">Italian</span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="ru">
+                                <img src="{{ asset('assets/admin/assets') }}/images/flags/russia.jpg"
+                                    alt="user-image" class="me-1" height="12"> <span
+                                    class="align-middle">Russian</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="dropdown d-none d-lg-inline-block ms-1">
+                        <button type="button" class="btn header-item noti-icon waves-effect"
+                            data-bs-toggle="fullscreen">
+                            <i class="bx bx-fullscreen"></i>
+                        </button>
+                    </div>
+
+                    <div class="dropdown d-inline-block">
+                        <button type="button" class="btn header-item noti-icon waves-effect"
+                            id="page-header-notifications-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <i class="bx bx-bell bx-tada"></i>
+                            <span class="badge bg-danger rounded-pill">3</span>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                            aria-labelledby="page-header-notifications-dropdown">
+                            <div class="p-3">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <h6 class="m-0" key="t-notifications"> Notifications </h6>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="#!" class="small" key="t-view-all"> View All</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-simplebar style="max-height: 230px;">
+                                <a href="javascript: void(0);" class="text-reset notification-item">
+                                    <div class="d-flex">
+                                        <div class="avatar-xs me-3">
+                                            <span class="avatar-title bg-primary rounded-circle font-size-16">
+                                                <i class="bx bx-cart"></i>
+                                            </span>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1" key="t-your-order">Your order is placed</h6>
+                                            <div class="font-size-12 text-muted">
+                                                <p class="mb-1" key="t-grammer">If several languages coalesce the
+                                                    grammar</p>
+                                                <p class="mb-0"><i class="mdi mdi-clock-outline"></i> <span
+                                                        key="t-min-ago">3 min ago</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="javascript: void(0);" class="text-reset notification-item">
+                                    <div class="d-flex">
+                                        <img src="{{ asset('assets/admin/assets') }}/images/users/avatar-3.jpg"
+                                            class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1">James Lemire</h6>
+                                            <div class="font-size-12 text-muted">
+                                                <p class="mb-1" key="t-simplified">It will seem like simplified
+                                                    English.</p>
+                                                <p class="mb-0"><i class="mdi mdi-clock-outline"></i> <span
+                                                        key="t-hours-ago">1 hours ago</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="javascript: void(0);" class="text-reset notification-item">
+                                    <div class="d-flex">
+                                        <div class="avatar-xs me-3">
+                                            <span class="avatar-title bg-success rounded-circle font-size-16">
+                                                <i class="bx bx-badge-check"></i>
+                                            </span>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1" key="t-shipped">Your item is shipped</h6>
+                                            <div class="font-size-12 text-muted">
+                                                <p class="mb-1" key="t-grammer">If several languages coalesce the
+                                                    grammar</p>
+                                                <p class="mb-0"><i class="mdi mdi-clock-outline"></i> <span
+                                                        key="t-min-ago">3 min ago</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <a href="javascript: void(0);" class="text-reset notification-item">
+                                    <div class="d-flex">
+                                        <img src="{{ asset('assets/admin/assets') }}/images/users/avatar-4.jpg"
+                                            class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1">Salena Layfield</h6>
+                                            <div class="font-size-12 text-muted">
+                                                <p class="mb-1" key="t-occidental">As a skeptical Cambridge friend
+                                                    of mine occidental.</p>
+                                                <p class="mb-0"><i class="mdi mdi-clock-outline"></i> <span
+                                                        key="t-hours-ago">1 hours ago</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="p-2 border-top d-grid">
+                                <a class="btn btn-sm btn-link font-size-14 text-center" href="javascript:void(0)">
+                                    <i class="mdi mdi-arrow-right-circle me-1"></i> <span key="t-view-more">View
+                                        More..</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dropdown d-inline-block">
+                        <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img class="rounded-circle header-profile-user"
+                                src="{{ asset('assets/admin/assets') }}/images/users/avatar-1.jpg"
+                                alt="Header Avatar">
+                            <span class="d-none d-xl-inline-block ms-1" key="t-henry">Henry</span>
+                            <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <!-- item-->
+                            <a class="dropdown-item" href="#"><i
+                                    class="bx bx-user font-size-16 align-middle me-1"></i> <span
+                                    key="t-profile">Profile</span></a>
+                            <a class="dropdown-item" href="#"><i
+                                    class="bx bx-wallet font-size-16 align-middle me-1"></i> <span
+                                    key="t-my-wallet">My Wallet</span></a>
+                            <a class="dropdown-item d-block" href="#"><span
+                                    class="badge bg-success float-end">11</span><i
+                                    class="bx bx-wrench font-size-16 align-middle me-1"></i> <span
+                                    key="t-settings">Settings</span></a>
+                            <a class="dropdown-item" href="#"><i
+                                    class="bx bx-lock-open font-size-16 align-middle me-1"></i> <span
+                                    key="t-lock-screen">Lock screen</span></a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-danger" href="#"><i
+                                    class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span
+                                    key="t-logout">Logout</span></a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown d-inline-block">
+                        <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect">
+                            <i class="bx bx-cog bx-spin"></i>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </header>
