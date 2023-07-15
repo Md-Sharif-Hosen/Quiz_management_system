@@ -42,11 +42,13 @@
                                     <th>SL N0</th>
                                     <th>Subject</th>
                                     <th>Class Name</th>
+                                    <th>Add Questions</th>
                                     <th>Total Marks</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
