@@ -42,10 +42,12 @@
                                 <th>SL N0</th>
                                 <th>Class Name</th>
                                 <th>Class Room No.</th>
+                                <th>Teacher Name</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
+                            <td></td>
                             <td></td>
                             <td></td>
                             <td></td>

@@ -40,7 +40,7 @@
                         <thead>
                             <tr>
                                 <th>SL N0</th>
-                                <th>Subject Name</th>
+                                <th>Quizz Subject Name</th>
                                 <th>Question Title</th>
                                 <th>Options</th>
                                 <th>Action</th>

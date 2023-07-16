@@ -15,9 +15,9 @@ class CreateQuizzesTable extends Migration
     {
         Schema::create('quizzes', function (Blueprint $table) {
             $table->id();
-            $table->string('subject',100)->nullable();
+            $table->string('quizz_subject',100)->nullable();
             $table->string('class_name',100)->nullable();
-            $table->integer('total_marks')->nullable();
+            $table->integer('per_question_marks')->nullable();
             $table->timestamps();
         });
     }

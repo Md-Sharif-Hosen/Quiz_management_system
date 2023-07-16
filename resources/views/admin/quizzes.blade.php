@@ -40,10 +40,9 @@
                             <thead>
                                 <tr>
                                     <th>SL N0</th>
-                                    <th>Subject</th>
+                                    <th>Quizz Subject</th>
                                     <th>Class Name</th>
-                                    <th>Add Questions</th>
-                                    <th>Total Marks</th>
+                                    <th>Per Question Marks</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -71,7 +70,7 @@
                         <div class="modal-body">
                             <form method="post" enctype="multipart/form-data">
                                 <div class="mb-3">
-                                    <label for="recipient-name" class="col-form-label">Subject Name</label>
+                                    <label for="recipient-name" class="col-form-label">Quizz_Subject_Name</label>
                                     <input type="text" class="form-control" name="subject" id="recipient-name">
                                 </div>
                                 <div class="mb-3">
@@ -81,7 +80,7 @@
                                     </select>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="recipient-name" class="col-form-label">Total Marks</label>
+                                    <label for="recipient-name" class="col-form-label">Per Question Marks</label>
                                     <input type="text" class="form-control" name="total_marks" id="recipient-name">
                                 </div>
                             </form>
