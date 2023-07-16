@@ -14,20 +14,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::group( ['prefix'=>'education','middleware'=>['auth'] ],function(){
-Route::get('/website','WebsiteController@index');
-});
 
-Route::group( ['prefix'=>'admin','middleware'=>['auth'] ],function(){
-Route::get('/dashboard','AdminController@index');
+Route::get('/','WebsiteController@index');
+
+Route::group( ['prefix'=>'dashboard','middleware'=>['auth'] ],function(){
+Route::get('/','AdminController@index');
 Route::get('/quizz','AdminController@quizz')->name('quizz');
 Route::get('/classes','AdminController@classes')->name('classes');
 Route::get('/questions','AdminController@questions')->name('questions');

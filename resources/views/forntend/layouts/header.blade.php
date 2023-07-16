@@ -18,6 +18,8 @@
 
     <!--====== Slick css ======-->
     <link rel="stylesheet" href="{{ asset('assets/website') }}/css/slick.css">
+    <link rel="stylesheet" href="{{ asset('assets/website') }}/css/app.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/website') }}/css/icons.min.css">
 
     <!--====== Animate css ======-->
     <link rel="stylesheet" href="{{ asset('assets/website') }}/css/animate.css">
@@ -51,7 +53,7 @@
 
 <body>
 
-   <!--====== PRELOADER PART START ======-->
+    <!--====== PRELOADER PART START ======-->
 
     <div class="preloader">
         <div class="loader rubix-cube">
@@ -79,80 +81,142 @@
                             <a class="navbar-brand" href="">
                                 <img src="{{ asset('assets/website') }}/images/logo-2.png" alt="Logo">
                             </a>
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
 
-                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
-                                <ul class="navbar-nav ml-auto">
-                                    <li class="nav-item">
-                                        <a class="active" href="{{ asset('assets/website') }}/index-2.html">Home</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="{{ asset('assets/website') }}/index-2.html">Home 01</a></li>
-                                            <li><a href="{{ asset('assets/website') }}/index-3.html">Home 02</a></li>
-                                            <li><a class="active" href="{{ asset('assets/website') }}/index-4.html">Home 03</a></li>
+                            @if (Route::has('login'))
+                                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                    <ul class="navbar-nav ml-auto">
+                                        @auth
+                                            <li class="nav-item">
+                                                <a class="active" href="">Home</a>
+                                                <ul class="sub-menu">
+                                                    {{-- <li><a href="">Home 01</a></li>
+                                                    <li><a href="{{ asset('assets/website') }}/index-3.html">Home 02</a></li> --}}
+                                                    {{-- <li><a class="active" href="{{ asset('assets/website') }}/index-4.html">Home 03</a></li> --}}
+                                                </ul>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="{{ asset('assets/website') }}/about.html">About us</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="{{ asset('assets/website') }}/courses.html">Courses</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="{{ asset('assets/website') }}/teachers.html">Our teachers</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="{{ asset('assets/website') }}/blog.html">Exam</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="{{ asset('assets/website') }}/contact.html">Contact Us</a>
+                                            </li>
                                         </ul>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{ asset('assets/website') }}/about.html">About us</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{ asset('assets/website') }}/courses.html">Courses</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="{{ asset('assets/website') }}/courses.html">Courses</a></li>
-                                            <li><a href="{{ asset('assets/website') }}/courses-singel.html">Course Singel</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{ asset('assets/website') }}/events.html">Events</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="{{ asset('assets/website') }}/events.html">Events</a></li>
-                                            <li><a href="{{ asset('assets/website') }}/events-singel.html">Event Singel</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{ asset('assets/website') }}/teachers.html">Our teachers</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="{{ asset('assets/website') }}/teachers.html">teachers</a></li>
-                                            <li><a href="{{ asset('assets/website') }}/teachers-singel.html">teacher Singel</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{ asset('assets/website') }}/blog.html">Blog</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="{{ asset('assets/website') }}/blog.html">Blog</a></li>
-                                            <li><a href="{{ asset('assets/website') }}/blog-singel.html">Blog Singel</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{ asset('assets/website') }}/shop.html">Shop</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="{{ asset('assets/website') }}/shop.html">Shop</a></li>
-                                            <li><a href="{{ asset('assets/website') }}/shop-singel.html">Shop Singel</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{ asset('assets/website') }}/contact.html">Contact</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="{{ asset('assets/website') }}/contact.html">Contact Us</a></li>
-                                            <li><a href="{{ asset('assets/website') }}/contact-2.html">Contact Us 2</a></li>
-                                        </ul>
-                                    </li>
+                                    </div>
+                                    <div class="dropdown d-inline-block">
+                                        <button type="button" class="btn header-item waves-effect"
+                                            id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            @guest
+                                                @if (Route::has('login'))
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                                    </li>
+                                                @endif
+
+                                                @if (Route::has('register'))
+                                                    <li class="nav-item">
+                                                        <a class="nav-link"
+                                                            href="{{ route('register') }}">{{ __('Register') }}</a>
+                                                    </li>
+                                                @endif
+                                            @else
+                                                <img class="rounded-circle header-profile-user"
+                                                    src="{{ asset('assets/admin/assets') }}/images/users/avatar-1.jpg"
+                                                    alt="Header Avatar">
+                                                <span class="d-none d-xl-inline-block ms-1" key="t-henry"
+                                                    style="    font-size: 17px;
+                                                    font-family: 'Montserrat', sans-serif;
+                                                    font-weight: 700;
+                                                    color:rgb(247, 245, 242)">{{ Auth::user()->name }}</span>
+                                                <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
+                                            </button>
+                                            <div class="dropdown-menu dropdown-menu-end">
+                                                <!-- item-->
+                                                <a class="dropdown-item" href="#"><i
+                                                        class="bx bx-user font-size-16 align-middle me-1"></i> <span
+                                                        key="t-profile">My
+                                                        Profile</span></a>
+
+                                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                                    onclick="event.preventDefault();
+                                                              document.getElementById('logout-form').submit();"><i
+                                                        class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i>
+                                                    <span key="t-logout">Logout</span></a>
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                    class="d-none">
+                                                    @csrf
+                                                </form>
+
+                                            </div>
+                                        @endguest
+                                    </div>
+                                @else
+                                    <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                        <ul class="navbar-nav ml-auto">
+                                            <li class="nav-item">
+                                                <a class="active" href="">Home</a>
+                                                <ul class="sub-menu">
+                                                    {{-- <li><a href="">Home 01</a></li>
+                                                <li><a href="{{ asset('assets/website') }}/index-3.html">Home 02</a></li> --}}
+                                                    {{-- <li><a class="active" href="{{ asset('assets/website') }}/index-4.html">Home 03</a></li> --}}
+                                                </ul>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="{{ asset('assets/website') }}/about.html">About us</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="{{ asset('assets/website') }}/courses.html">Courses</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="{{ asset('assets/website') }}/teachers.html">Our teachers</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="{{ asset('assets/website') }}/blog.html">Exam</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="{{ asset('assets/website') }}/contact.html">Contact Us</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="{{ route('login') }}">Login</a>
+                                            </li>
+                                            @if (Route::has('register'))
+                                                <li>
+                                                    <a href="{{ route('register') }}">Register</a>
+                                                </li>
+                                            @endif
+                                        @endauth
+                                </div>
                                 </ul>
-                            </div>
-                        </nav> <!-- nav -->
                     </div>
-                    <div class="col-lg-1 col-md-2 col-sm-3 col-3">
+                    @endif
+                    </nav> <!-- nav -->
+                </div>
+                {{-- <div class="col-lg-1 col-md-2 col-sm-3 col-3">
                         <div class="right-icon text-right">
                             <ul>
-                                <li><a href="{{ asset('assets/website') }}/#" id="search"><i class="fa fa-search"></i></a></li>
+                                <li><a href="#" id="search"><i class="fa fa-search"></i></a></li>
                                 <li><a href="{{ asset('assets/website') }}/#"><i class="fa fa-shopping-bag"></i><span>0</span></a></li>
                             </ul>
                         </div> <!-- right icon -->
-                    </div>
-                </div> <!-- row -->
-            </div> <!-- container -->
+                    </div> --}}
+
+            </div> <!-- row -->
+        </div> <!-- container -->
         </div>
     </header>

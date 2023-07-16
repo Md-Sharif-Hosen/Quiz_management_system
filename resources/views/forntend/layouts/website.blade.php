@@ -1,4 +1,4 @@
-@include('forntend.layouts.header')
+@include("forntend.layouts.header")
     <!--====== HEADER PART ENDS ======-->
 
     <!--====== SEARCH BOX PART START ======-->
@@ -20,7 +20,7 @@
 
     <!--====== SLIDER PART START ======-->
 
-        @include('forntend.layouts.slidebar')
+        @include("forntend.layouts.slidebar")
     <!--====== SLIDER PART ENDS ======-->
 
     <!--====== CATEGORY PART START ======-->
@@ -624,4 +624,4 @@
     <!--====== PATNAR LOGO PART ENDS ======-->
 
     <!--====== FOOTER PART START ======-->
-@include('forntend.layouts.footer')
+@include("forntend.layouts.footer")

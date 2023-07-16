@@ -73,7 +73,7 @@
                                 <input type="text" class="form-control" name="class_name" id="recipient-name">
                             </div>
                             <div class="mb-3">
-                                <label for="recipient-name" class="col-form-label">Class Name</label>
+                                <label for="recipient-name" class="col-form-label">Class Room No.</label>
                                 <input type="text" class="form-control" name="class_room_no" id="recipient-name">
                             </div>
 

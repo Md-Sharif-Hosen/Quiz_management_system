@@ -156,6 +156,18 @@
 
 <!--====== Main js ======-->
 <script src="{{ asset('assets/website') }}/js/main.js"></script>
+<script src="{{ asset('assets/website') }}/https://maps.googleapis.com/maps/api/js?key=AIzaSyDC3Ip9iVC0nIxC6V14CKLQ1HZNF_65qEQ"></script>
+<script src="{{ asset('assets/website') }}/js/map-script.js"></script>
+<script src="{{ asset('assets/website') }}/libs/jquery/jquery.min.js"></script>
+<script src="{{ asset('assets/website') }}/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{ asset('assets/website') }}/libs/metismenu/metisMenu.min.js"></script>
+<script src="{{ asset('assets/website') }}/libs/simplebar/simplebar.min.js"></script>
+<script src="{{ asset('assets/website') }}/libs/node-waves/waves.min.js"></script>
+
+</body>
+
+</html>
+
 
 <!--====== Map js ======-->
 <script src="{{ asset('assets/website') }}/https://maps.googleapis.com/maps/api/js?key=AIzaSyDC3Ip9iVC0nIxC6V14CKLQ1HZNF_65qEQ"></script>

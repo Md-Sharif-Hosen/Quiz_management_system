@@ -244,32 +244,43 @@
                     <div class="dropdown d-inline-block">
                         <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="rounded-circle header-profile-user"
-                                src="{{ asset('assets/admin/assets') }}/images/users/avatar-1.jpg"
-                                alt="Header Avatar">
-                            <span class="d-none d-xl-inline-block ms-1" key="t-henry">Henry</span>
-                            <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-end">
-                            <!-- item-->
-                            <a class="dropdown-item" href="#"><i
-                                    class="bx bx-user font-size-16 align-middle me-1"></i> <span
-                                    key="t-profile">Profile</span></a>
-                            <a class="dropdown-item" href="#"><i
-                                    class="bx bx-wallet font-size-16 align-middle me-1"></i> <span
-                                    key="t-my-wallet">My Wallet</span></a>
-                            <a class="dropdown-item d-block" href="#"><span
-                                    class="badge bg-success float-end">11</span><i
-                                    class="bx bx-wrench font-size-16 align-middle me-1"></i> <span
-                                    key="t-settings">Settings</span></a>
-                            <a class="dropdown-item" href="#"><i
-                                    class="bx bx-lock-open font-size-16 align-middle me-1"></i> <span
-                                    key="t-lock-screen">Lock screen</span></a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item text-danger" href="#"><i
-                                    class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span
-                                    key="t-logout">Logout</span></a>
-                        </div>
+                            @guest
+                                @if (Route::has('login'))
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    </li>
+                                @endif
+
+                                @if (Route::has('register'))
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    </li>
+                                @endif
+                            @else
+                                <img class="rounded-circle header-profile-user"
+                                    src="{{ asset('assets/admin/assets') }}/images/users/avatar-1.jpg"
+                                    alt="Header Avatar">
+                                <span class="d-none d-xl-inline-block ms-1"
+                                    key="t-henry">{{ Auth::user()->name }}</span>
+                                <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <!-- item-->
+                                <a class="dropdown-item" href="#"><i
+                                        class="bx bx-user font-size-16 align-middle me-1"></i> <span key="t-profile">My
+                                        Profile</span></a>
+
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                              document.getElementById('logout-form').submit();"><i
+                                        class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span
+                                        key="t-logout">Logout</span></a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+
+                            </div>
+                        @endguest
                     </div>
 
                     <div class="dropdown d-inline-block">

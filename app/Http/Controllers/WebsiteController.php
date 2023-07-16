@@ -12,4 +12,5 @@ class WebsiteController extends Controller
         //function_body
         return view('forntend.layouts.website');
     }
+
 }
