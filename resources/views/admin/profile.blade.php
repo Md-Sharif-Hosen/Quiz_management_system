@@ -1,7 +1,11 @@
-@extends('forntend.layouts.website')
+@extends('admin.layouts.dashboard')
 @section('content')
-    <link rel="stylesheet" href="{{ asset('assets/website') }}/css/profile.css">
+    <link rel="stylesheet" href="{{ asset('assets/admin') }}/assets/css/profile.css">
     <section class="bg-light bg_cover" style="background-image: url({{ asset('assets/website') }}/images/background.webp)">
+        <div style="margin-bottom: 40px;">
+            <h3 class="text-center" style="    font-size: 50px;
+        color: #bac2c8;">My Profile</h3>
+        </div>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 mb-4 mb-sm-5">
@@ -17,13 +21,14 @@
                                         {{-- @dd(Auth::user()->load("user_role")); --}}
 
 
-                                        <span class="text-primary">{{ Auth::user()->load("user_role")->user_role->title }} </span>
+                                        <span class="text-primary">{{ Auth::user()->load('user_role')->user_role->title }}
+                                        </span>
                                     </div>
                                     <ul class=" mb-1-9 "
                                         style="    font-size: 20px;
-                                    margin-left: 2px;
-                                    margin-top: 5px;
-                                    color: #86b2b6db;">
+                                margin-left: 2px;
+                                margin-top: 5px;
+                                color: #86b2b6db;">
                                         <li class="mb-2 mb-xl-3 display-28"><span
                                                 class="display-26 text-secondary me-2 font-weight-600">Name</span>
                                             {{ Auth::user()->name }}</li>
@@ -51,11 +56,11 @@
                         <span class="section-title text-primary mb-3 mb-sm-4">About Me</span>
                         <p class="P"
                             style="
-                                font-size: 16px;
-                                font-weight: 400;
-                                line-height: 28px;
-                                color: #ffffff;
-                                margin: 0px;">
+                            font-size: 16px;
+                            font-weight: 400;
+                            line-height: 28px;
+                            color: #ffffff;
+                            margin: 0px;">
                             Edith is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
                             industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
                             type and scrambled it to make a type specimen book.
@@ -67,7 +72,7 @@
                     </div>
                 </div>
                 <div class="col-lg-12
-                            card card-style1">
+                        card card-style1">
                     <div class="row">
                         <div class="col-lg-12 mb-4 mb-sm-5">
                             <div class="mb-4 mb-sm-5">
@@ -117,15 +122,15 @@
                                 <span class="section-title text-primary mb-3 mb-sm-4">Education</span>
                                 <p
                                     style="
-                                    font-size: 16px;
-                                    font-weight: 400;
-                                    line-height: 28px;
-                                    color: #ffffff;
-                                    margin: 0px;">
+                                font-size: 16px;
+                                font-weight: 400;
+                                line-height: 28px;
+                                color: #ffffff;
+                                margin: 0px;">
                                     Many desktop publishing packages and web page editors now use Lorem Ipsum as their
                                     default model text, and a search for 'lorem ipsum' will uncover many web sites still
-                                     There are many variations of passages of Lorem Ipsum available, but
-                                        the majority have suffered alteration in some form, by injected humour.class="mb-1-9"
+                                    There are many variations of passages of Lorem Ipsum available, but
+                                    the majority have suffered alteration in some form, by injected humour.class="mb-1-9"
                                     in their infancy.</p>
 
                             </div>
@@ -136,4 +141,3 @@
         </div>
     </section>
 @endsection
-{{-- </section> --}}

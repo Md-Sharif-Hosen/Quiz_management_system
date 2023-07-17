@@ -136,6 +136,7 @@
                                                     </li>
                                                 @endif
                                             @else
+
                                                 <img class="rounded-circle header-profile-user"
                                                     src="/{{ Auth::user()->image }}"
                                                     alt="Header Avatar">
@@ -164,6 +165,7 @@
                                                 </form>
 
                                             </div>
+                                            
                                         @endguest
                                     </div>
                                 @else

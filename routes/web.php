@@ -22,13 +22,16 @@ Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::group( ['prefix'=>'','middleware'=>['isstudent'] ],function(){
+    Route::get('/', 'WebsiteController@index')->name("home");
+});
 
-Route::get('/','WebsiteController@index')->name("home");
-Route::get('/profile','WebsiteController@profile')->name('profile');
+Route::get('/profile', 'WebsiteController@profile')->name('profile');
 
-Route::group( ['prefix'=>'dashboard','middleware'=>['auth'] ],function(){
-Route::get('/','AdminController@index');
-Route::get('/quizz','AdminController@quizz')->name('quizz');
-Route::get('/classes','AdminController@classes')->name('classes');
-Route::get('/questions','AdminController@questions')->name('questions');
+Route::group(['prefix' => 'dashboard', 'middleware' => ['isadmin']], function () {
+    Route::get('/', 'AdminController@index')->name('dashboard');
+    Route::get('/quizz', 'AdminController@quizz')->name('quizz');
+    Route::get('/classes', 'AdminController@classes')->name('classes');
+    Route::get('/questions', 'AdminController@questions')->name('questions');
+    Route::get('/profile', 'AdminController@profile')->name('profile');
 });

@@ -266,7 +266,7 @@
                             </button>
                             <div class="dropdown-menu dropdown-menu-end">
                                 <!-- item-->
-                                <a class="dropdown-item" href="#"><i
+                                <a class="dropdown-item" href="{{ route('profile') }}"><i
                                         class="bx bx-user font-size-16 align-middle me-1"></i> <span key="t-profile">My
                                         Profile</span></a>
 

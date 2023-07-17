@@ -3,10 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
     //
+//    public function __construct() {
+//         if(Auth::check()&& (Auth::user()->role_id == "1"));
+//           return redirect()->route('dashboard');
+//     }
     public function index()
     {
         //function_body
@@ -27,5 +32,10 @@ class AdminController extends Controller
     {
         //function_body
         return view('admin.questions');
+    }
+    public function profile()
+    {
+        //function_body
+        return view('admin.profile');
     }
 }

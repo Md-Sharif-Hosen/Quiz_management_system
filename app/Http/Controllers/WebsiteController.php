@@ -4,10 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class WebsiteController extends Controller
 {
-    //
+    public function __construct() {
+        // $this->middleware('isstudent');
+    }
+
     public function index()
     {
         //function_body
@@ -20,5 +24,6 @@ class WebsiteController extends Controller
 
         return view('forntend.profile');
     }
+
 
 }
