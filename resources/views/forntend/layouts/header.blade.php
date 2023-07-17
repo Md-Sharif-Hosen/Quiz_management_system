@@ -94,7 +94,7 @@
                                     <ul class="navbar-nav ml-auto">
                                         @auth
                                             <li class="nav-item">
-                                                <a class="active" href="">Home</a>
+                                                <a class="active" href="{{ route('home') }}">Home</a>
                                                 <ul class="sub-menu">
                                                     {{-- <li><a href="">Home 01</a></li>
                                                     <li><a href="{{ asset('assets/website') }}/index-3.html">Home 02</a></li> --}}
@@ -137,7 +137,7 @@
                                                 @endif
                                             @else
                                                 <img class="rounded-circle header-profile-user"
-                                                    src="{{ asset('assets/admin/assets') }}/images/users/avatar-1.jpg"
+                                                    src="/{{ Auth::user()->image }}"
                                                     alt="Header Avatar">
                                                 <span class="d-none d-xl-inline-block ms-1" key="t-henry"
                                                     style="    font-size: 17px;
@@ -148,7 +148,7 @@
                                             </button>
                                             <div class="dropdown-menu dropdown-menu-end">
                                                 <!-- item-->
-                                                <a class="dropdown-item" href="#"><i
+                                                <a class="dropdown-item" href="{{ route("profile") }}"><i
                                                         class="bx bx-user font-size-16 align-middle me-1"></i> <span
                                                         key="t-profile">My
                                                         Profile</span></a>

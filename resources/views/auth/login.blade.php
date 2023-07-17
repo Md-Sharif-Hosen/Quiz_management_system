@@ -15,8 +15,8 @@
 
                 </div>
                 <div class="card-body">
-                    <form class="card-body cardbody-color p-lg-5">
-
+                    <form class="card-body cardbody-color p-lg-5" method="post" action="{{ route('login') }}">
+                        @csrf
                         <div class="text-center">
                             <img src="{{ asset('assets/website') }}/images/text-logo.jpg"
                                 class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3" width="200px"
@@ -24,7 +24,7 @@
                         </div>
 
                         <div class="mb-3">
-                            <input type="text" class="form-control" id="Username" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus aria-describedby="emailHelp"
+                            <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus aria-describedby="emailHelp"
                                 placeholder="Email">
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
@@ -43,7 +43,7 @@
                         <div class="row align-items-center remember">
                             <input type="checkbox" name="remember">Remember Me
                         </div>
-                        <div class="text-center"><button type="submit" class="btn btn-color px-5 mb-5 w-100">Login</button>
+                        <div class="text-center"><button type="submit" class="btn btn-color px-5 mb-5 w-100">{{ __('Login') }}</button>
                         </div>
                         <div id="emailHelp" class="form-text text-center mb-5 " style="color: rgb(174, 182, 60)">Not
                             Registered? <a href="{{ route('register') }}" class=" fw-bold" style="font-size: 15px"> Create an

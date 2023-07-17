@@ -23,7 +23,8 @@ Auth::routes();
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-Route::get('/','WebsiteController@index');
+Route::get('/','WebsiteController@index')->name("home");
+Route::get('/profile','WebsiteController@profile')->name('profile');
 
 Route::group( ['prefix'=>'dashboard','middleware'=>['auth'] ],function(){
 Route::get('/','AdminController@index');

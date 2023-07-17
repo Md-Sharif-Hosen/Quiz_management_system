@@ -17,7 +17,7 @@
                 </div>
 
                 <div class="card-body">
-                    <form method="POST" class="card-body cardbody-color p-lg-5" action="{{ route('register') }}">
+                    <form method="POST" class="card-body cardbody-color p-lg-5" enctype="multipart/form-data" action="{{ route('register') }}">
                         @csrf
 
                         <div class="row mb-3">
@@ -58,7 +58,7 @@
                             <label for="phone_number" class="col-md-4 col-form-label text-md-right"  style="color: #feffd8">Phone Number</label>
 
                             <div class="col-md-8">
-                                <input id="password" type="number"
+                                <input id="phone_number" type="number"
                                     class="form-control @error('phone_number') is-invalid @enderror" name="phone_number" value="{{ old('phone_number') }}" required
                                     autocomplete="phone_number">
 
