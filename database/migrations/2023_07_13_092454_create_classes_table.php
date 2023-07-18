@@ -17,6 +17,7 @@ class CreateClassesTable extends Migration
             $table->id();
             $table->string('class_name',100)->nullable();
             $table->integer('class_room_no')->nullable();
+            $table->string('teacher',100)->nullable();
             $table->timestamps();
         });
     }

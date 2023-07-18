@@ -67,7 +67,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form method="post" enctype="multipart/form-data">
+                        <form method="post" action="{{ route('classes.store') }}" enctype="multipart/form-data">
                             <div class="mb-3">
                                 <label for="recipient-name" class="col-form-label">Class Name</label>
                                 <input type="text" class="form-control" name="class_name" id="recipient-name">
@@ -76,12 +76,18 @@
                                 <label for="recipient-name" class="col-form-label">Class Room No.</label>
                                 <input type="text" class="form-control" name="class_room_no" id="recipient-name">
                             </div>
+                            <div class="mb-3">
+                                <label for="recipient-name" class="col-form-label">Teacher Name</label>
+                                <select class="form-control" name="teacher" id="teacher" >
+                                    <option value="{{auth()->user()->name}}">{{auth()->user()->name}}</option>
+                                </select>
+                            </div>
 
+                            <div class="modal-footer d-flex justify-content-between">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Save</button>
+                            </div>
                         </form>
-                    </div>
-                    <div class="modal-footer d-flex justify-content-between">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save</button>
                     </div>
                 </div>
             </div>

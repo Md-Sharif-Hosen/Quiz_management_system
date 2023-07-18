@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="{{ asset('assets/admin') }}/assets/css/profile.css">
     <section class="bg-light bg_cover" style="background-image: url({{ asset('assets/website') }}/images/background.webp)">
         <div style="margin-bottom: 40px;">
-            <h3 class="text-center" style="    font-size: 50px;
+            <h3 class="text-center" style="font-size: 50px;
         color: #bac2c8;">My Profile</h3>
         </div>
         <div class="container">

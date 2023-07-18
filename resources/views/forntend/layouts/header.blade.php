@@ -125,7 +125,8 @@
                                             @guest
                                                 @if (Route::has('login'))
                                                     <li class="nav-item">
-                                                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                                        <a class="nav-link"
+                                                            href="{{ route('login') }}">{{ __('Login') }}</a>
                                                     </li>
                                                 @endif
 
@@ -136,20 +137,19 @@
                                                     </li>
                                                 @endif
                                             @else
-
-                                                <img class="rounded-circle header-profile-user"
-                                                    src="/{{ Auth::user()->image }}"
-                                                    alt="Header Avatar">
-                                                <span class="d-none d-xl-inline-block ms-1" key="t-henry"
-                                                    style="    font-size: 17px;
+                                                @if (Auth::check() && Auth::user()->role_id == '2')
+                                                    <img class="rounded-circle header-profile-user"
+                                                        src="/{{ Auth::user()->image }}" alt="Header Avatar">
+                                                    <span class="d-none d-xl-inline-block ms-1" key="t-henry"
+                                                        style="    font-size: 17px;
                                                     font-family: 'Montserrat', sans-serif;
                                                     font-weight: 700;
                                                     color:rgb(247, 245, 242)">{{ Auth::user()->name }}</span>
-                                                <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
+                                                    <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                                             </button>
                                             <div class="dropdown-menu dropdown-menu-end">
                                                 <!-- item-->
-                                                <a class="dropdown-item" href="{{ route("profile") }}"><i
+                                                <a class="dropdown-item" href="{{ route('profile') }}"><i
                                                         class="bx bx-user font-size-16 align-middle me-1"></i> <span
                                                         key="t-profile">My
                                                         Profile</span></a>
@@ -165,51 +165,52 @@
                                                 </form>
 
                                             </div>
-                                            
-                                        @endguest
-                                    </div>
-                                @else
-                                    <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
-                                        <ul class="navbar-nav ml-auto">
-                                            <li class="nav-item">
-                                                <a class="active" href="">Home</a>
-                                                <ul class="sub-menu">
-                                                    {{-- <li><a href="">Home 01</a></li>
+                                    @endif
+
+                                @endguest
+                        </div>
+                    @else
+                        <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item">
+                                    <a class="active" href="">Home</a>
+                                    <ul class="sub-menu">
+                                        {{-- <li><a href="">Home 01</a></li>
                                                 <li><a href="{{ asset('assets/website') }}/index-3.html">Home 02</a></li> --}}
-                                                    {{-- <li><a class="active" href="{{ asset('assets/website') }}/index-4.html">Home 03</a></li> --}}
-                                                </ul>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="{{ asset('assets/website') }}/about.html">About us</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="{{ asset('assets/website') }}/courses.html">Courses</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="{{ asset('assets/website') }}/teachers.html">Our teachers</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="{{ asset('assets/website') }}/blog.html">Exam</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="{{ asset('assets/website') }}/contact.html">Contact Us</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="{{ route('login') }}">Login</a>
-                                            </li>
-                                            @if (Route::has('register'))
+                                        {{-- <li><a class="active" href="{{ asset('assets/website') }}/index-4.html">Home 03</a></li> --}}
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ asset('assets/website') }}/about.html">About us</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ asset('assets/website') }}/courses.html">Courses</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ asset('assets/website') }}/teachers.html">Our teachers</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ asset('assets/website') }}/blog.html">Exam</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ asset('assets/website') }}/contact.html">Contact Us</a>
+                                </li>
+                                <li class="nav-item">
+                                   <a class="" href="{{ route('login') }}">Login</a>
+                                </li>
+                                {{-- @if (Route::has('register'))
                                                 <li>
                                                     <a href="{{ route('register') }}">Register</a>
                                                 </li>
-                                            @endif
-                                        @endauth
-                                </div>
-                                </ul>
+                                            @endif --}}
+                            @endauth
                     </div>
-                    @endif
-                    </nav> <!-- nav -->
+                    </ul>
                 </div>
-                {{-- <div class="col-lg-1 col-md-2 col-sm-3 col-3">
+                @endif
+                </nav> <!-- nav -->
+            </div>
+            {{-- <div class="col-lg-1 col-md-2 col-sm-3 col-3">
                         <div class="right-icon text-right">
                             <ul>
                                 <li><a href="#" id="search"><i class="fa fa-search"></i></a></li>
@@ -218,7 +219,7 @@
                         </div> <!-- right icon -->
                     </div> --}}
 
-            </div> <!-- row -->
+        </div> <!-- row -->
         </div> <!-- container -->
         </div>
     </header>

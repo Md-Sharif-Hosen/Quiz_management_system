@@ -656,7 +656,7 @@
 
 <!--====== PATNAR LOGO PART START ======-->
 
-<div id="patnar-logo" class="pt-40 pb-80 gray-bg d-flex">
+{{-- <div id="patnar-logo" class="pt-40 pb-80 gray-bg d-flex">
     <div class="container">
         <div class="row patnar-slied">
             <div class="col-lg-12">
@@ -691,7 +691,7 @@
             </div>
         </div> <!-- row -->
     </div> <!-- container -->
-</div>
+</div> --}}
 
 <!--====== PATNAR LOGO PART ENDS ======-->
 @endsection

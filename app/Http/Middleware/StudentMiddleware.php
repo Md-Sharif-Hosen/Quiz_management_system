@@ -25,7 +25,7 @@ class StudentMiddleware
                 return redirect('/dashboard')->with('message', 'Access denied you are not admin');
             }
         } else {
-            return redirect('/login')->with('message', 'login to access website');
+            return redirect()->route('/')->with('message', 'login to access website');
         }
 
         // return $next($request);

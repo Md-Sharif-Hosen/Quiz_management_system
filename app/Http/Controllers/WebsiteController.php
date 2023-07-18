@@ -12,6 +12,11 @@ class WebsiteController extends Controller
         // $this->middleware('isstudent');
     }
 
+    // public function demo()
+    // {
+    //     //function_body
+    //     return view('forntend.demo');
+    // }
     public function index()
     {
         //function_body
