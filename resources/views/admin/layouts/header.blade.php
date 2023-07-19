@@ -18,6 +18,10 @@
 
 
     <link href="{{ asset('assets/admin/assets') }}/css/custom.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+
 
 </head>
 
@@ -257,8 +261,8 @@
                                     </li>
                                 @endif
                             @else
-                                <img class="rounded-circle header-profile-user"
-                                    src="/{{ Auth::user()->image }}"
+
+                                <img class="rounded-circle header-profile-user" src="/{{ Auth::user()->image }}"
                                     alt="Header Avatar">
                                 <span class="d-none d-xl-inline-block ms-1"
                                     key="t-henry">{{ Auth::user()->name }}</span>
@@ -280,8 +284,12 @@
                                 </form>
 
                             </div>
+
+
                         @endguest
                     </div>
+
+
 
                     <div class="dropdown d-inline-block">
                         <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect">
@@ -291,4 +299,5 @@
 
                 </div>
             </div>
+
         </header>

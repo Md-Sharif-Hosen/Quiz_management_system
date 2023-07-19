@@ -14,7 +14,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('quizz') }}" class="waves-effect">
+                    <a href="{{ route('quiz') }}" class="waves-effect">
                         <i class="bx bx-home-circle"></i>
                         <span key="t-chat">Quizzes</span>
                     </a>

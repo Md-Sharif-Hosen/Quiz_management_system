@@ -42,16 +42,27 @@
                                     <th>SL N0</th>
                                     <th>Quizz Subject</th>
                                     <th>Class Name</th>
-                                    <th>Per Question Marks</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+
+                                @foreach ($quizz as $data)
+                                    <tr>
+                                        <td>{{ $data->id }}</td>
+                                        <td>{{ $data->quizz_subject }}</td>
+                                        <td>
+                                            @if ($data->class_name_relation)
+                                                {{ $data->class_name_relation->class_name }}
+                                            @endif
+                                        </td>
+
+                                        <td>
+                                            <a href="" class="btn btn-outline-info">Edit</a>
+                                            <a href="" class="btn btn-outline-danger">Delete</a>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -68,26 +79,27 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form method="post" enctype="multipart/form-data">
+                            <form method="post" action="{{ route('quiz_store') }}" enctype="multipart/form-data">
+                                @csrf
                                 <div class="mb-3">
-                                    <label for="recipient-name" class="col-form-label">Quizz_Subject_Name</label>
-                                    <input type="text" class="form-control" name="subject" id="recipient-name">
+                                    <label for="recipient-name" class="col-form-label">Quizz Subject</label>
+                                    <input type="text" class="form-control" name="quizz_subject" id="recipient-name">
                                 </div>
                                 <div class="mb-3">
                                     <label for="message-text" class="col-form-label">Class Name</label>
-                                    <select name="class_name" class="form-control" id="class_name">
+                                    <select name="class_name" class="form-control" id="class_name_create">
                                         <option value="">select</option>
+                                        @foreach ($class as $data)
+                                            <option value="{{ $data->id }}">{{ $data->class_name }}</option>
+                                        @endforeach
+
                                     </select>
                                 </div>
-                                <div class="mb-3">
-                                    <label for="recipient-name" class="col-form-label">Per Question Marks</label>
-                                    <input type="text" class="form-control" name="total_marks" id="recipient-name">
+                                <div class="modal-footer d-flex justify-content-between">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary">Save</button>
                                 </div>
                             </form>
-                        </div>
-                        <div class="modal-footer d-flex justify-content-between">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save</button>
                         </div>
                     </div>
                 </div>

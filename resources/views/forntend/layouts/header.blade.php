@@ -137,7 +137,7 @@
                                                     </li>
                                                 @endif
                                             @else
-                                                @if (Auth::check() && Auth::user()->role_id == '2')
+                                                {{-- @if (Auth::check() && Auth::user()->role_id == '2') --}}
                                                     <img class="rounded-circle header-profile-user"
                                                         src="/{{ Auth::user()->image }}" alt="Header Avatar">
                                                     <span class="d-none d-xl-inline-block ms-1" key="t-henry"
@@ -165,7 +165,7 @@
                                                 </form>
 
                                             </div>
-                                    @endif
+                                      {{-- @endif --}}
 
                                 @endguest
                         </div>
@@ -196,7 +196,7 @@
                                     <a href="{{ asset('assets/website') }}/contact.html">Contact Us</a>
                                 </li>
                                 <li class="nav-item">
-                                   <a class="" href="{{ route('login') }}">Login</a>
+                                    <a class="" href="{{ route('login') }}">Login</a>
                                 </li>
                                 {{-- @if (Route::has('register'))
                                                 <li>

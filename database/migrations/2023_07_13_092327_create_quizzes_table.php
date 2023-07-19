@@ -17,7 +17,6 @@ class CreateQuizzesTable extends Migration
             $table->id();
             $table->string('quizz_subject',100)->nullable();
             $table->string('class_name',100)->nullable();
-            $table->integer('per_question_marks')->nullable();
             $table->timestamps();
         });
     }

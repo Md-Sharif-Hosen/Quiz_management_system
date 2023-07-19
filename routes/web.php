@@ -31,8 +31,15 @@ Route::get('/profile', 'WebsiteController@profile')->name('profile');
 Route::group(['prefix' => 'dashboard', 'middleware' => ['isadmin'] , 'namespace'=>'Admin'], function () {
     Route::get('/', 'AdminController@index')->name('dashboard');
     Route::get('/profile', 'AdminController@profile')->name('profile');
+    //classes
     Route::get('/classes', 'ClassesController@classes')->name('classes');
     Route::post('/classes_store', 'ClassesController@classes_store')->name('classes.store');
-    Route::get('/quizz', 'AdminController@quizz')->name('quizz');
+    Route::get('/classes_delete/{id}','ClassesController@classes_delete')->name('classes_delete');
+    Route::get('/classes_edit/{id}','ClassesController@classes_edit')->name('classes_edit');
+    Route::put('/classes_update','ClassesController@classes_update')->name('classes_update');
+
+    //Quizz
+    Route::get('/quiz', 'QuizController@quiz')->name('quiz');
+    Route::post('/quiz_store','QuizController@quiz_store')->name('quiz_store');
     Route::get('/questions', 'AdminController@questions')->name('questions');
 });
