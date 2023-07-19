@@ -26,7 +26,7 @@ Route::group(['prefix' => '', 'middleware' => ['']], function () {
 });
 Route::get('/', 'WebsiteController@index')->name("home");
 
-Route::get('/profile', 'WebsiteController@profile')->name('profile');
+Route::get('/profile', 'WebsiteController@profile')->name('profile.user');
 
 Route::group(['prefix' => 'dashboard', 'middleware' => ['isadmin'] , 'namespace'=>'Admin'], function () {
     Route::get('/', 'AdminController@index')->name('dashboard');

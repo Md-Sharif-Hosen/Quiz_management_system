@@ -137,7 +137,7 @@
                                                     </li>
                                                 @endif
                                             @else
-                                                {{-- @if (Auth::check() && Auth::user()->role_id == '2') --}}
+                                                @if (Auth::check() && Auth::user()->role_id == '2')
                                                     <img class="rounded-circle header-profile-user"
                                                         src="/{{ Auth::user()->image }}" alt="Header Avatar">
                                                     <span class="d-none d-xl-inline-block ms-1" key="t-henry"
@@ -149,7 +149,7 @@
                                             </button>
                                             <div class="dropdown-menu dropdown-menu-end">
                                                 <!-- item-->
-                                                <a class="dropdown-item" href="{{ route('profile') }}"><i
+                                                <a class="dropdown-item" href="{{ route('profile.user') }}"><i
                                                         class="bx bx-user font-size-16 align-middle me-1"></i> <span
                                                         key="t-profile">My
                                                         Profile</span></a>
@@ -165,7 +165,7 @@
                                                 </form>
 
                                             </div>
-                                      {{-- @endif --}}
+                                      @endif
 
                                 @endguest
                         </div>
