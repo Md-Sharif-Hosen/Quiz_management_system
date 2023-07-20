@@ -47,4 +47,8 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['isadmin'] , 'namespace'
 
     //question
     Route::get('/questions', 'QuestionController@questions')->name('questions');
+    Route::post('/questions_store','QuestionController@questions_store')->name('questions_store');
+    Route::get('/question_edit/{id}','QuestionController@question_edit')->name('question_edit');
+    Route::put('/question_update','QuestionController@question_update')->name('question_update');
+    Route::get('/question_delete/{id}','QuestionController@question_delete')->name('question_delete');
 });

@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Question extends Model
 {
     use HasFactory;
+    protected $guarded=[];
+
+    public function quizz_relation()
+    {
+        //function_body
+        return $this->belongsTo(Quiz::class,'Question_subject');
+    }
 }
