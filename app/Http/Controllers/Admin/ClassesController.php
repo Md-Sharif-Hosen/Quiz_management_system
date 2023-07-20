@@ -18,6 +18,12 @@ class ClassesController extends Controller
     public function classes_store(request $request)
     {
         //function_body
+        $request->validate(
+            [
+                'class_name' => ['required', 'min:5'],
+                'class_room_no' => ['required']
+            ]
+        );
         $classes = new Classes();
         $classes->class_name = request('class_name');
         $classes->class_room_no = request('class_room_no');
@@ -51,8 +57,7 @@ class ClassesController extends Controller
     public function classes_delete($id)
     {
         //function_body
-        $delete_class = Classes::where('id', $id)->first();
-        $delete_class->delete();
+        $delete_class = Classes::where('id', $id)->delete();
         return redirect()->back()->with('delete', 'Class Delete Successfully');
     }
 }

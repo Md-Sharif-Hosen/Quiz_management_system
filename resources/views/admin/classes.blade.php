@@ -3,6 +3,7 @@
 
 @section('content')
     <div class="container">
+
         @if (session()->get('done'))
             <script>
                 Toast.fire({
@@ -11,6 +12,15 @@
                     title: '{{ session()->get('done') }}'
                 })
             </script>
+        @else
+            {{-- <script>
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops not Create',
+                    text: 'Class not Create!',
+
+                })
+            </script> --}}
         @endif
         <div class="col md-6 sm-3 lg-12">
             <div class="card ">
@@ -76,6 +86,7 @@
                                             <button class="btn btn-outline-info edit_btn"
                                                 value="{{ $data->id }}">Edit</button>
                                             <a class="btn btn-outline-danger"
+                                                onclick="return confirm('Do you want to Delete')"
                                                 href="{{ route('classes_delete', $data->id) }}">Delete</a>
                                         </td>
                                     </tr>
@@ -100,11 +111,23 @@
                                 @csrf
                                 <div class="mb-3">
                                     <label for="recipient-name" class="col-form-label">Class Name</label>
-                                    <input type="text" class="form-control" name="class_name" id="class_name">
+                                    <input type="text" class="form-control" value="{{ old('class_name') }}"
+                                        name="class_name" id="class_name">
+                                    @error('class_name')
+                                        <div class="alert alert-danger">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
                                 <div class="mb-3">
                                     <label for="recipient-name" class="col-form-label">Class Room No.</label>
-                                    <input type="text" class="form-control" name="class_room_no" id="class_room_no">
+                                    <input type="text" class="form-control" value="{{ old('class_room_no') }}"
+                                        name="class_room_no" id="class_room_no">
+                                    @error('class_room_no')
+                                        <div class="alert alert-danger">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
                                 <div class="mb-3">
                                     <label for="recipient-name" class="col-form-label">Teacher Name</label>
@@ -123,15 +146,23 @@
                 </div>
             </div>
             @if (session()->get('Update'))
-            <script>
-                Toast.fire({
-                    icon: 'Success',
-                    background: '#28DC20',
-                    title: '{{ session()->get('delete') }}'
-                })
-            </script>
-        @endif
+                <script>
+                    Swal.fire({
+                        icon: 'Success',
+                        background: '#28DC20',
+                        title: '{{ session()->get('Update') }}'
+                    })
+                </script>
+            {{-- @else
+                <script>
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops not Update',
+                        text: 'Class not Update!',
 
+                    })
+                </script> --}}
+            @endif
             {{-- Edit Class modal --}}
             <div class="modal fade" id="edit_class" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
@@ -147,11 +178,23 @@
                                 <input type="hidden" id="id" name="id">
                                 <div class="mb-3">
                                     <label for="recipient-name" class="col-form-label">Class Name</label>
-                                    <input type="text" class="form-control" name="class_name" id="edit_class_name">
+                                    <input type="text" class="form-control"  value="{{ old('class_name') }}" name="class_name" id="edit_class_name">
+                                    @error('class_name')
+                                    <div class="alert alert-danger">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+
                                 </div>
                                 <div class="mb-3">
                                     <label for="recipient-name" class="col-form-label">Class Room No.</label>
-                                    <input type="text" class="form-control" name="class_room_no" id="edit_class_room_no">
+                                    <input type="text" class="form-control"  value="{{ old('class_room_no') }}" name="class_room_no"
+                                        id="edit_class_room_no">
+                                    @error('class_room_no')
+                                        <div class="alert alert-danger">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
                                 <div class="mb-3">
                                     <label for="recipient-name" class="col-form-label">Teacher Name</label>
@@ -179,25 +222,25 @@
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"
         integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <script>
-       $(document).ready(function() {
-        $(document).on('click', '.edit_btn', function() {
-            var class_id = $(this).val();
+        $(document).ready(function() {
+            $(document).on('click', '.edit_btn', function() {
+                var class_id = $(this).val();
 
-            $.ajax({
-                type: "GET",
-                url: "/dashboard/classes_edit/" + class_id,
-                success: function(response) {
-                    console.log(response);
-                    console.log(response.classes);
-                    let select = response.classes;
-                    id.value = select.id;
-                    edit_class_name.value = select.class_name;
-                    edit_class_room_no.value = select.class_room_no;
-                    teacher.value = select.teacher;
-                    $('#edit_class').modal('show');
-                }
+                $.ajax({
+                    type: "GET",
+                    url: "/dashboard/classes_edit/" + class_id,
+                    success: function(response) {
+                        console.log(response);
+                        console.log(response.classes);
+                        let select = response.classes;
+                        id.value = select.id;
+                        edit_class_name.value = select.class_name;
+                        edit_class_room_no.value = select.class_room_no;
+                        teacher.value = select.teacher;
+                        $('#edit_class').modal('show');
+                    }
+                });
             });
         });
-    });
     </script>
 @endsection

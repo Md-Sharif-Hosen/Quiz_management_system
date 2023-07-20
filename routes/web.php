@@ -41,5 +41,10 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['isadmin'] , 'namespace'
     //Quizz
     Route::get('/quiz', 'QuizController@quiz')->name('quiz');
     Route::post('/quiz_store','QuizController@quiz_store')->name('quiz_store');
-    Route::get('/questions', 'AdminController@questions')->name('questions');
+    Route::get('/quiz_edit/{id}', 'QuizController@quiz_edit')->name('quiz_edit');
+    Route::put('quiz_update','QuizController@quiz_update')->name('quiz_update');
+    Route::get('/quiz_delete/{id}', 'QuizController@delete')->name('quiz_delete');
+
+    //question
+    Route::get('/questions', 'QuestionController@questions')->name('questions');
 });
