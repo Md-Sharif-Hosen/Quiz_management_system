@@ -22,7 +22,7 @@
                 <li>
                     <a href="{{ route('quiz') }}" class="waves-effect">
                         <i class="bx bx-home-circle"></i>
-                        <span key="t-chat">Quizzes</span>
+                        <span key="t-chat">Subject</span>
                     </a>
                 </li>
                 <li>
@@ -31,6 +31,12 @@
                         <span key="t-chat">Questions</span>
                     </a>
                 </li>
+                {{-- <li>
+                    <a href="{{ route('options')}}" class="waves-effect">
+                        <i class="bx bx-home-circle"></i>
+                        <span key="t-chat">Quizz</span>
+                    </a>
+                </li> --}}
             </ul>
         </div>
         <!-- Sidebar -->

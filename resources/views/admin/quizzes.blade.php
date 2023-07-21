@@ -4,13 +4,13 @@
         <div class="col md-6 sm-3 lg-12">
             <div class="card ">
                 <div class="card-header justify-content-center">
-                    <h2 class="text-center" style="color: rgb(44 1 1);">Quizzes list</h2>
+                    <h2 class="text-center" style="color: rgb(44 1 1);">Subject list</h2>
                 </div>
                 <div class="d-flex justify-content-between">
 
                     <div>
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                            data-bs-whatever="@mdo">Quizzes Create</button>
+                            data-bs-whatever="@mdo">Subject Create</button>
                     </div>
                     @if (session()->get('create'))
                         <script>

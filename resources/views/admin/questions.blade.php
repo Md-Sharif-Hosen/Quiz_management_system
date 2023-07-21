@@ -1,5 +1,20 @@
 @extends('admin.layouts.dashboard')
 @section('content')
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                @foreach ($errors->all() as $error)
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong></strong>{{ $error }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+                @endforeach
+
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
     @if (session()->get('delete'))
         <script>
             Swal.fire({
@@ -53,6 +68,8 @@
                                     <th>SL N0</th>
                                     <th>Quizz Subject</th>
                                     <th>Question Title</th>
+                                    <th>Options</th>
+                                    <th>Answer</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -66,6 +83,8 @@
                                             @endif
                                         </td>
                                         <td>{{ $item->question_title }}</td>
+                                        <td></td>
+                                        <td></td>
                                         <td>
                                             <button type="button" value="{{ $item->id }}"
                                                 class="btn btn-outline-info edit_btn">Edit</button>
@@ -95,8 +114,8 @@
 
             {{--  create Question modal --}}
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content ">
                         <div class="modal-header">
                             <h1 class="modal-title fs-5" id="exampleModalLabel">Question Create</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -104,22 +123,49 @@
                         <div class="modal-body">
                             <form method="post" action="{{ route('questions_store') }}" enctype="multipart/form-data">
                                 @csrf
-                                <div class="mb-3">
+                                <div class="col-sm-3 mb-4">
                                     <label for="recipient-name" class="col-form-label">Quiz Subject</label>
-                                    <select class="form-control" name="Question_subject" id="quizz_subject">
+                                    <select class="form-control" name="quiz_id" id="quizz_subject">
                                         <option value="">select</option>
                                         @foreach ($quiz as $data)
                                             <option value="{{ $data->id }}">{{ $data->quizz_subject }}</option>
                                         @endforeach
                                     </select>
                                 </div>
-                                <div class="mb-3">
-                                    <label for="recipient-name" class="col-form-label">Question Title</label>
+                                <div class="mb-4">
+                                    <label for="recipient-name" class="col-form-label ">Question Title</label>
                                     <input type="text" class="form-control" name="question_title" id="recipient-name">
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6"><label for="">A:</label></div>
+                                    <div class="col-md-6"><label for="">B:</label></div>
+                                </div>
+                                <div class="row mb-4">
+                                    <div class="col-md-6"><input class="form-control" type="text" name="optionA"></div>
+                                    <div class="col-md-6"><input class="form-control" type="text" name="optionB"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6"><label for="">C:</label></div>
+                                    <div class="col-md-6"><label for="">D:</label></div>
+                                </div>
+                                <div class="row mb-4">
+                                    <div class="col-md-6"><input class="form-control" type="text" name="optionC"></div>
+                                    <div class="col-md-6"><input class="form-control" type="text" name="optionD"></div>
+                                </div>
+                                <div class="row col-md-6 mb-4">
+                                    <label for="">Answer:</label>
+                                    <select name="answer" class="form-control mb-4" id="">
+                                        <option value="">select</option>
+                                        <option value="a">A</option>
+                                        <option value="b">B</option>
+                                        <option value="c">C</option>
+                                        <option value="d">D</option>
+                                    </select>
                                 </div>
 
                                 <div class="modal-footer d-flex justify-content-between">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
                                     <button type="submit" class="btn btn-primary">Save</button>
                                 </div>
                             </form>
@@ -135,7 +181,8 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <h1 class="modal-title fs-5" id="exampleModalLabel">Question Create</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                             <form method="post" action="{{ route('question_update') }}" enctype="multipart/form-data">
