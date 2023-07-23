@@ -83,8 +83,16 @@
                                             @endif
                                         </td>
                                         <td>{{ $item->question_title }}</td>
-                                        <td></td>
-                                        <td></td>
+                                        <td>
+                                            {{ $item->optionA }},
+                                            {{ $item->optionB }},
+                                            {{ $item->optionC}},
+                                            {{ $item->optionD }}
+                                        </td>
+                                        <td>
+                                            {{ $item->answer }}
+
+                                        </td>
                                         <td>
                                             <button type="button" value="{{ $item->id }}"
                                                 class="btn btn-outline-info edit_btn">Edit</button>
