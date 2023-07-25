@@ -111,7 +111,7 @@
                                                 <a href="{{ asset('assets/website') }}/teachers.html">Our teachers</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="{{ asset('assets/website') }}/blog.html">Exam</a>
+                                                <a href="{{ route('exam') }}">Exam</a>
                                             </li>
                                             <li class="nav-item">
                                                 <a href="{{ asset('assets/website') }}/contact.html">Contact Us</a>
@@ -190,7 +190,7 @@
                                     <a href="{{ asset('assets/website') }}/teachers.html">Our teachers</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ asset('assets/website') }}/blog.html">Exam</a>
+                                    <a href="{{ route('exam') }}">Exam</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ asset('assets/website') }}/contact.html">Contact Us</a>

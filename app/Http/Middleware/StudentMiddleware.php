@@ -22,10 +22,11 @@ class StudentMiddleware
             if (Auth::user()->role_id == 2) {
                 return $next($request);
             } else {
-                return redirect('/dashboard')->with('message', 'Access denied you are not admin');
+                return redirect('/dashboard')->with('message', 'Access denied you are not Student');
+
             }
         } else {
-            return redirect()->route('/')->with('message', 'login to access website');
+            return redirect('/login')->with('message', 'login to access website');
         }
 
         // return $next($request);

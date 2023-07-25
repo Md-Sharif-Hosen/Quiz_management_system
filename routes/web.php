@@ -22,9 +22,10 @@ Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 // Route::get('/','WebsiteController@demo')->name('demo');
-Route::group(['prefix' => '', 'middleware' => ['']], function () {
+Route::group(['prefix' => '', 'middleware' => ['isstudent']], function () {
 });
 Route::get('/', 'WebsiteController@index')->name("home");
+Route::get('/exam','Website\ExamController@exam')->name('exam')->middleware('isstudent');
 
 Route::get('/profile', 'WebsiteController@profile')->name('profile.user');
 

@@ -1,6 +1,7 @@
 @extends("forntend.layouts.website")
 
 @section("content")
+
 <!--====== SEARCH BOX PART START ======-->
 
 <div class="search-box">

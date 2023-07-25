@@ -50,6 +50,17 @@
 
                                             </select>
                                         </div>
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="col-form-label">Teacher Name</label>
+                                            <select class="form-control" name="teacher" id="teacher">
+                                                <option value="{{ auth()->user()->name }}">{{ auth()->user()->name }}</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="col-form-label">Quizz Banner</label>
+                                            <input class="form-control" type="file" id="photo" accept="image/*" name="cover_image">
+
+                                        </div>
                                         <div class="modal-footer d-flex justify-content-between">
                                             <button type="button" class="btn btn-secondary"
                                                 data-bs-dismiss="modal">Close</button>
@@ -90,6 +101,8 @@
                                     <th>SL N0</th>
                                     <th>Quizz Subject</th>
                                     <th>Class Name</th>
+                                    <th>Teacher</th>
+                                    <th>Quizz Banner</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -104,6 +117,8 @@
                                                 {{ $data->class_name_relation->class_name }}
                                             @endif
                                         </td>
+                                        <td>{{ $data->teacher }}</td>
+                                        <td>{{ $data->cover_image }}</td>
 
                                         <td>
                                             <button type="button" class="btn btn-primary edit_btn"
@@ -158,6 +173,18 @@
 
                                         </select>
                                     </div>
+                                    <div class="mb-3">
+                                        <label for="recipient-name" class="col-form-label">Teacher Name</label>
+                                        <select class="form-control" name="teacher" id="teacher">
+                                            <option value="{{ auth()->user()->name }}">{{ auth()->user()->name }}
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="recipient-name" class="col-form-label">Quizz Banner</label>
+                                        <input class="form-control" type="file" id="photo" accept="image/*" name="cover_image">
+                                        <img src="" id="photo_preview" height="50" width="50" alt="">
+                                    </div>
                                     <div class="modal-footer d-flex justify-content-between">
                                         <button type="button" class="btn btn-secondary"
                                             data-bs-dismiss="modal">Close</button>
@@ -196,6 +223,8 @@
                     id.value = select.id;
                     edit_quizz_subject.value = select.quizz_subject;
                     edit_class_name.value = select.class_name;
+                    teacher.value = select.teacher;
+                    photo_preview.src = '/' + select.cover_image;
                     $('#edit_quiz').modal('show');
                 }
             });

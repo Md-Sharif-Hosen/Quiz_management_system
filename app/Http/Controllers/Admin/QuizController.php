@@ -6,13 +6,14 @@ use App\Http\Controllers\Controller;
 use App\Models\Classes;
 use App\Models\Quiz;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class QuizController extends Controller
 {
     //
     public function quiz()
     {
-    
+
         //function_body
         $class=Classes::get();
         $quizz=Quiz::with('class_name_relation')->get();
@@ -24,6 +25,10 @@ class QuizController extends Controller
         $quizstore=new Quiz();
         $quizstore->quizz_subject=request('quizz_subject');
         $quizstore->class_name=request('class_name');
+        $quizstore->teacher=request('teacher');
+        if (request()->hasFile('cover_image')) {
+            $quizstore->cover_image = Storage::put('/quizz', request()->file('cover_image'));
+        }
         $quizstore->save();
         return redirect()->back()->with('create','Quizz create Successfully');
     }
@@ -43,6 +48,10 @@ class QuizController extends Controller
         $quiz_update=Quiz::find($quiz_id);
         $quiz_update->quizz_subject=request('quizz_subject');
         $quiz_update->class_name=request('class_name');
+        $quiz_update->teacher=request('teacher');
+        if (request()->hasFile('cover_image')) {
+            $quiz_update->cover_image = Storage::put('/quizz', request()->file('cover_image'));
+        }
         $quiz_update->save();
         return redirect()->back()->with('Update','Quizz Update Successfully');
     }
