@@ -21,7 +21,7 @@ public function exam($id)
     //function_body
     $quiz=Quiz::find($id);
     $question=Question::where('quiz_id',$id);
-    return view('forntend.exam');
+    return view('forntend.exam',compact('quiz','question'));
 }
 
 }
