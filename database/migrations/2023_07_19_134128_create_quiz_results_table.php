@@ -15,11 +15,10 @@ class CreateQuizResultsTable extends Migration
     {
         Schema::create('quiz_results', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('user_quiz_id')->nullable();
-            $table->bigInteger('quiz_id')->nullable();
-            $table->bigInteger('question_id')->nullable();
-            $table->bigInteger('option_id')->nullable();
-            $table->integer('total_point')->nullable();
+            $table->string('quiz_id')->nullable();
+            $table->string('ques_id')->nullable();
+            $table->string('user_id')->nullable();
+            $table->string('submit_answer')->nullable();
             $table->timestamps();
         });
     }
