@@ -16,7 +16,7 @@
                         <div class="singel-course-2" style="">
                             <div class="thum">
                                 <div class="image">
-                                    <a href=""><img src="/{{ $data->cover_image }}"
+                                    <a href="{{ route('exam',$data->id) }}"><img src="/{{ $data->cover_image }}"
                                             style="width: 351px;
                                             height: 265px;"
                                             alt="Course"></a>
@@ -30,7 +30,7 @@
                                         bottom: 163px;
                                         right: 89px;
                                         z-index: 5;">
-                                        <a href="">
+                                        <a href="{{ route('exam',$data->id) }}">
                                             <h3 style="color: #251000">{{ $data->quizz_subject }}</h3>
                                         </a>
                                     </div>

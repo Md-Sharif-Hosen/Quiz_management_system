@@ -25,7 +25,8 @@ Auth::routes();
 Route::group(['prefix' => '', 'middleware' => ['isstudent']], function () {
 });
 Route::get('/', 'WebsiteController@index')->name("home");
-Route::get('/exam','Website\ExamController@exam')->name('exam')->middleware('isstudent');
+Route::get('/examlist','Website\ExamController@examlist')->name('examlist')->middleware('isstudent');
+Route::get('/exam/{id}','Website\ExamController@exam')->name('exam');
 
 Route::get('/profile', 'WebsiteController@profile')->name('profile.user');
 
