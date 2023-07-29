@@ -28,6 +28,7 @@ Route::get('/', 'WebsiteController@index')->name("home");
 Route::get('/examlist','Website\ExamController@examlist')->name('examlist')->middleware('isstudent');
 Route::get('/exam/{id}','Website\ExamController@exam')->name('exam');
 Route::post('/exam/store','Website\ExamController@exam_store')->name('exam.store');
+Route::get('/result','Website\ExamController@result')->name('result');
 
 Route::get('/profile', 'WebsiteController@profile')->name('profile.user');
 
