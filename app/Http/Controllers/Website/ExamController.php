@@ -7,6 +7,7 @@ use App\Models\Question;
 use App\Models\Quiz;
 use App\Models\QuizResult;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ExamController extends Controller
 {
@@ -28,13 +29,15 @@ public function exam($id)
 public function exam_store(request $request)
 {
     //function_body
-    $Data=new QuizResult();
-    dd(request()->all());
-    $Data->quiz_id=request('quiz_id');
-    $Data->ques_id=request('ques_id');
-    $Data->user_id=request('user_id');
-    $Data->submit_answer=request('submit_answer');
-    $Data->save();
+
+    foreach ($request->ques_id as $key => $ques_id) {
+        QuizResult::create([
+            'quiz_id' => $request->quiz_id,
+            'User_id' => Auth::user()->id,
+            'ques_id' => $ques_id,
+            'submit_answer' => $request->submit_answer[$key]
+        ]);
+    }
     return redirect()->back();
 }
 

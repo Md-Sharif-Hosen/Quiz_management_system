@@ -9,13 +9,14 @@
 
                 <form action="{{ route('exam.store') }}" method="post">
                     @csrf
-                    <input type="hidden" name="quiz_id" value="{{ $quiz->id }}">
+                    <input type="text" name="quiz_id" value="{{ $quiz->id }}">
+                    {{-- <input type="text" name="user_id" value="{{ Auth::user()->id  }}"> --}}
                     <section style="    padding-left: 220px;
                     padding-top: 55px;
                 }">
 
                         @foreach ($question as $key => $data)
-                            <input type="hidden" name="ques_id" value="{{ $data->id }}">
+                            <input type="text" name="ques_id[]" value="{{ $data->id }}">
                             {{-- <input type="hidden" name="answer{{ $key + 1 }}" value="0"> --}}
                             <div style="padding: 10px">
                                 <ul>
@@ -27,28 +28,28 @@
                                 <ul>
                                     <li>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" name="submit_answer"
+                                            <input class="form-check-input" type="checkbox" name="submit_answer[]"
                                                 value=" {{ $data->optionA }}" id="flexRadioDefault1">
                                             <label class="form-check-label" for="flexRadioDefault1">
                                                 {{ $data->optionA }}
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" name="submit_answer"
+                                            <input class="form-check-input" type="checkbox" name="submit_answer[]"
                                                 value=" {{ $data->optionB }}" id="flexRadioDefault2">
                                             <label class="form-check-label" for="flexRadioDefault2">
                                                 {{ $data->optionB }}
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" name="submit_answer"
+                                            <input class="form-check-input" type="checkbox" name="submit_answer[]"
                                                 value=" {{ $data->optionC }}" id="flexRadioDefault2">
                                             <label class="form-check-label" for="flexRadioDefault2">
                                                 {{ $data->optionC }}
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" name="submit_answer"
+                                            <input class="form-check-input" type="checkbox" name="submit_answer[]"
                                                 value=" {{ $data->optionD }}" id="flexRadioDefault2">
                                             <label class="form-check-label" for="flexRadioDefault2">
                                                 {{ $data->optionD }}
