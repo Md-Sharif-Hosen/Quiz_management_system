@@ -14,6 +14,12 @@
                     </a>
                 </li>
                 <li>
+                    <a href="{{ route('student_result') }}" class="waves-effect">
+                        <i class="bx bx-home-circle"></i>
+                        <span key="t-chat">Student Result</span>
+                    </a>
+                </li>
+                <li>
                     <a href="{{ route('classes') }}" class="waves-effect">
                         <i class="bx bx-home-circle"></i>
                         <span key="t-chat">Classes</span>

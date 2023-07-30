@@ -7,8 +7,9 @@
             </div>
             <div class="card-body">
                 @foreach ($quiz_topic as $data )
-                <div class="card row col-md-3 d-inline-block" style="height:150px;width:300px; margin:10px">
+                <div class="card row col-md-3 d-inline-block" style="height:150px;width:300px; margin:10px;background-color: #eac5c5;   ">
                    <h4 class="text-center">{{ $data->quizz_subject }}</h4>
+                   <h4 class="text-center">total Examiner: {{ $data->quiz_submit_user->distinct()->count('user_id') }} <a href="{{ route('quiz_examiner',$data->id) }}" class="btn btn-outline-info">view</a></h4>
                    <h6 class="text-center"><a href="{{ route('quiz_topic_question',$data->id) }}" class="btn btn-outline-info">View Question</a></h6>
                 </div>
                 @endforeach

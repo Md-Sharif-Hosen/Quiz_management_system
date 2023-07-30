@@ -9,4 +9,14 @@ class QuizResult extends Model
 {
     use HasFactory;
     protected $guarded=[];
+    public function user_relation()
+    {
+        //function_body
+        return $this->hasMany(User::class,'id','user_id');
+    }
+    public function quiz_relation()
+    {
+        //function_body
+        return $this->hasMany(Quiz::class,'id','quiz_id');
+    }
 }

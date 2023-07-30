@@ -6,7 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Models\Classes;
 use App\Models\Question;
 use App\Models\Quiz;
+use App\Models\QuizResult;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class QuizController extends Controller
@@ -19,7 +21,7 @@ class QuizController extends Controller
         $class=Classes::get();
 
         $quizz=Quiz::with('class_name_relation')->get();
-        dd($quizz->toArray());
+        // dd($quizz->toArray());
         return view('admin.quizzes',compact('class','quizz'));
     }
     public function quiz_store(request $request)
@@ -71,7 +73,8 @@ class QuizController extends Controller
     {
         // $quiz_question = Quiz::join('questions', 'quizzes.id','=','questions.quiz_id')
         // ->select('quizzes.*','questions.question_title')->get();
-        $quiz_topic=Quiz::get();
+        $quiz_topic=Quiz::with('quiz_submit_user')->get();
+
         // dd($quiz_topic->toArray());
         return view('admin.quiz_topic',compact('quiz_topic'));
     }
@@ -82,5 +85,17 @@ class QuizController extends Controller
         $quiz_topic_question=Question::where('quiz_id',$id)->get();
 
         return view('admin.quiz_topic_question',compact('quiz','quiz_topic_question'));
+    }
+    public function quiz_examiner($id)
+    {
+        //function_body
+        $quiz=quiz::find($id);
+        // $quiz_result=QuizResult::where('quiz_id',$id)->get();
+        $quiz_result=QuizResult::
+        where('quiz_id',$id)->select(DB::raw('count(*) as user_count, user_id,quiz_id'))
+        ->groupBy('user_id','quiz_id')
+        ->get();
+        // dd($quiz_result->toArray());
+        return view('admin.quiz_examiner',compact("quiz_result"));
     }
 }

@@ -14,4 +14,10 @@ class Quiz extends Model
         //function_body
         return $this->belongsTo(Classes::class,'class_name');
     }
+    public function quiz_submit_user()
+    {
+        //function_body
+        return $this->hasOne(QuizResult::class);
+    }
+
 }

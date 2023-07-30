@@ -49,7 +49,8 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['isadmin'] , 'namespace'
     Route::put('quiz_update','QuizController@quiz_update')->name('quiz_update');
     Route::get('/quiz_delete/{id}', 'QuizController@delete')->name('quiz_delete');
     Route::get('/quiz_topic', 'QuizController@quiz_topic')->name('quiz_topic');
-    Route::get('/quiz_topic_question/{id}', 'QuizController@quiz_topic_question')->name('quiz_topic_question');
+    Route::get('/quiz_topic_question/{id}','QuizController@quiz_topic_question')->name('quiz_topic_question');
+    Route::get('/quiz_examiner/{id}','QuizController@quiz_examiner')->name('quiz_examiner');
 
     //question
     Route::get('/questions', 'QuestionController@questions')->name('questions');
@@ -57,5 +58,8 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['isadmin'] , 'namespace'
     Route::get('/question_edit/{id}','QuestionController@question_edit')->name('question_edit');
     Route::put('/question_update','QuestionController@question_update')->name('question_update');
     Route::get('/question_delete/{id}','QuestionController@question_delete')->name('question_delete');
+
+    //Student Result
+    Route::get('/student_result','StudentResultController@student_result')->name('student_result');
 
 });
