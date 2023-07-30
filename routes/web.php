@@ -48,6 +48,8 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['isadmin'] , 'namespace'
     Route::get('/quiz_edit/{id}', 'QuizController@quiz_edit')->name('quiz_edit');
     Route::put('quiz_update','QuizController@quiz_update')->name('quiz_update');
     Route::get('/quiz_delete/{id}', 'QuizController@delete')->name('quiz_delete');
+    Route::get('/quiz_topic', 'QuizController@quiz_topic')->name('quiz_topic');
+    Route::get('/quiz_topic_question/{id}', 'QuizController@quiz_topic_question')->name('quiz_topic_question');
 
     //question
     Route::get('/questions', 'QuestionController@questions')->name('questions');

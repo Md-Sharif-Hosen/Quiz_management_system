@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\QuizResult;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -26,8 +27,8 @@ class WebsiteController extends Controller
     public function profile()
     {
         //function_body
-
-        return view('forntend.profile');
+       $result=QuizResult::where('quiz_results.user_id', '=', Auth::user()->id)->get();
+        return view('forntend.profile',compact('result'));
     }
 
 

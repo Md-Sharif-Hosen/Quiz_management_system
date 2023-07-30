@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Classes;
+use App\Models\Question;
 use App\Models\Quiz;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -16,7 +17,9 @@ class QuizController extends Controller
 
         //function_body
         $class=Classes::get();
+
         $quizz=Quiz::with('class_name_relation')->get();
+        dd($quizz->toArray());
         return view('admin.quizzes',compact('class','quizz'));
     }
     public function quiz_store(request $request)
@@ -63,5 +66,21 @@ class QuizController extends Controller
         $quiz_delete=Quiz::where('id',$id)->first();
         $quiz_delete->delete();
         return redirect()->back()->with('Delete','Delete Quiz Successfully');
+    }
+    public function quiz_topic()
+    {
+        // $quiz_question = Quiz::join('questions', 'quizzes.id','=','questions.quiz_id')
+        // ->select('quizzes.*','questions.question_title')->get();
+        $quiz_topic=Quiz::get();
+        // dd($quiz_topic->toArray());
+        return view('admin.quiz_topic',compact('quiz_topic'));
+    }
+    public function quiz_topic_question($id)
+    {
+        //function_body
+        $quiz=Quiz::find($id);
+        $quiz_topic_question=Question::where('quiz_id',$id)->get();
+
+        return view('admin.quiz_topic_question',compact('quiz','quiz_topic_question'));
     }
 }

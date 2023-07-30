@@ -26,6 +26,12 @@
                     </a>
                 </li>
                 <li>
+                    <a href="{{ route('quiz_topic') }}" class="waves-effect">
+                        <i class="bx bx-home-circle"></i>
+                        <span key="t-chat">Quiz Topic & Question</span>
+                    </a>
+                </li>
+                <li>
                     <a href="{{ route('questions') }}" class="waves-effect">
                         <i class="bx bx-home-circle"></i>
                         <span key="t-chat">Questions</span>

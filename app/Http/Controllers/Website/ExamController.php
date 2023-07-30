@@ -31,14 +31,7 @@ class ExamController extends Controller
     public function exam_store(request $request)
     {
         // //function_body
-        // $current_date=date('y-m-d H:me:s');
-        // //dd($current_date);
-        // $exam=DB::table('quiz_results')->where('created_at',$current_date)->where('user_id',Auth::user()->id)->get();
-        // dd($exam);
-        // //dd($request->Auth::user()->id);
-        // if($exam){
-        //     echo "already exam taken";
-        // }else{
+
         foreach ($request->ques_id as $key => $ques_id) {
             QuizResult::create([
                 'quiz_id' => $request->quiz_id,
@@ -46,7 +39,6 @@ class ExamController extends Controller
                 'ques_id' => $ques_id,
                 'submit_answer' => $request->submit_answer[$key]
             ]);
-            // }
         }
 
         return redirect()->route('result');
@@ -54,14 +46,16 @@ class ExamController extends Controller
 
     public function result()
     {
-        $result = DB::table('quiz_results')
-            ->join('questions', 'quiz_results.submit_answer', '=', 'questions.answer')
+        $result = QuizResult::join('questions', 'quiz_results.submit_answer', '=', 'questions.answer')
             ->select('quiz_results.*', 'questions.question_title')
             ->where('quiz_results.user_id', '=', Auth::user()->id)
             ->count();
 
-        $question = Question::count();
-        dd($result, $question);
-        return view('forntend.result');
+        $question = Question::join('quiz_results', 'questions.id', '=', 'quiz_results.ques_id')
+            ->select('questions.*', 'quiz_results.ques_id')
+            ->count();
+            $incorrect=$question - $result;
+        // dd($result, $question);
+        return view('forntend.result',compact('result','question','incorrect'));
     }
 }

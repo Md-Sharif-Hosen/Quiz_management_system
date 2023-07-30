@@ -31,7 +31,7 @@
                                                 class="display-26 text-secondary me-2 font-weight-600">Email:</span>
                                             {{ Auth::user()->email }}</li>
                                         <li class="mb-2 mb-xl-3 display-28"><span
-                                                class="display-26 text-secondary me-2 font-weight-600">Website:</span>
+                                                class="display-26 text-secondary me-2 font-weight-600">Phone Number:</span>
                                             {{ Auth::user()->phone_number }}</li>
 
                                     </ul>

@@ -1,6 +1,6 @@
 @extends('forntend.layouts.website')
 @section('maincontent')
-    <section>
+    <section style=" background-color:#d2b895c2;border-radius: 41px">
         <div class="col-md-6 col-lg-12">
             <div class="container">
                 <div>
@@ -9,14 +9,14 @@
 
                 <form action="{{ route('exam.store') }}" method="post">
                     @csrf
-                    <input type="text" name="quiz_id" value="{{ $quiz->id }}">
+                    <input type="hidden" name="quiz_id" value="{{ $quiz->id }}">
                     {{-- <input type="text" name="user_id" value="{{ Auth::user()->id  }}"> --}}
                     <section style="    padding-left: 220px;
                     padding-top: 55px;
                 }">
 
                         @foreach ($question as $key => $data)
-                            <input type="text" name="ques_id[]" value="{{ $data->id }}">
+                            <input type="hidden" name="ques_id[]" value="{{ $data->id }}">
                             {{-- <input type="hidden" name="answer{{ $key + 1 }}" value="0"> --}}
                             <div style="padding: 10px">
                                 <ul>

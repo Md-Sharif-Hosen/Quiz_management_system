@@ -162,13 +162,8 @@
                                 </div>
                                 <div class="row col-md-6 mb-4">
                                     <label for="">Answer:</label>
-                                    <select name="answer" class="form-control mb-4" id="">
-                                        <option value="">select</option>
-                                        <option value="a">A</option>
-                                        <option value="b">B</option>
-                                        <option value="c">C</option>
-                                        <option value="d">D</option>
-                                    </select>
+                                    <input class="form-control" type="text" name="answer">
+
                                 </div>
 
                                 <div class="modal-footer d-flex justify-content-between">
