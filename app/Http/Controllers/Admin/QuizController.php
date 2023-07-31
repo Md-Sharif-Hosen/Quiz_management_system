@@ -71,11 +71,9 @@ class QuizController extends Controller
     }
     public function quiz_topic()
     {
-        // $quiz_question = Quiz::join('questions', 'quizzes.id','=','questions.quiz_id')
-        // ->select('quizzes.*','questions.question_title')->get();
         $quiz_topic=Quiz::with('quiz_submit_user')->get();
 
-        // dd($quiz_topic->toArray());
+        // dd($quiz_topic[0]->quiz_submit_user);
         return view('admin.quiz_topic',compact('quiz_topic'));
     }
     public function quiz_topic_question($id)

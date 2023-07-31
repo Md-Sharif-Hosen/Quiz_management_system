@@ -21,6 +21,7 @@ class AdminMiddleware
             //admin check
             if (Auth::user()->role_id == "1") {
                 return $next($request);
+                // return redirect('/dashboard')->with('message', 'Access denied you are not admin');
             } else {
                 return redirect('/')->with('message', 'Access denied you are not admin');
             }
@@ -28,6 +29,6 @@ class AdminMiddleware
             return redirect('/login')->with('message', 'login to access website');
         }
 
-        return $next($request);
+
     }
 }
