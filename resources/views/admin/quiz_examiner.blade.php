@@ -12,23 +12,32 @@
                             <tr>
                                 <th>Name</th>
                                 <th>Subject</th>
+                                <th>Mark</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($quiz_result as $data)
-                                <tr>
+                            <tr>
                                     <td>
                                         @foreach ($data->user_relation as $item)
                                             {{ $item->name }}
                                         @endforeach
                                     </td>
                                     <td>
+                                        {{-- @dd($data->quiz_relation->toArray() ) --}}
                                         @foreach ($data->quiz_relation as $item)
-                                            {{ $item->quizz_subject }}
+                                            {{ $item }}
+                                        @endforeach
                                     </td>
-                            @endforeach
-                            </tr>
-                            @endforeach
+                                       {{-- @dd($data->question_relation->toArray() )
+                                    @foreach ($data->question_relation as $item)
+                                    {{ $item->answer }}
+                                @endforeach --}}
+                                    <td>
+
+                                    </td>
+                                </tr>
+                                @endforeach
                         </tbody>
                     </table>
                 </div>

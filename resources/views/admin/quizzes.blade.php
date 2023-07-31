@@ -102,6 +102,7 @@
                                     <th>Quizz Subject</th>
                                     <th>Class Name</th>
                                     <th>Teacher</th>
+                                    <th>Status</th>
                                     <th>Quizz Banner</th>
                                     <th>Action</th>
                                 </tr>
@@ -118,8 +119,8 @@
                                             @endif
                                         </td>
                                         <td>{{ $data->teacher }}</td>
-                                        <td>{{ $data->cover_image }}</td>
-
+                                        <td>{{ $data->status }}</td>
+                                        <td><img src="/{{ $data->cover_image }}" style="height:50px;width:50px" alt=""></td>
                                         <td>
                                             <button type="button" class="btn btn-primary edit_btn"
                                                 value="{{ $data->id }}">Edit</button>
@@ -181,6 +182,11 @@
                                         </select>
                                     </div>
                                     <div class="mb-3">
+                                        <label for="recipient-name" class="col-form-label">Status</label>
+                                        <input type="text" class="form-control" name="status"
+                                            id="status_id">
+                                    </div>
+                                    <div class="mb-3">
                                         <label for="recipient-name" class="col-form-label">Quizz Banner</label>
                                         <input class="form-control" type="file" id="photo" accept="image/*" name="cover_image">
                                         <img src="" id="photo_preview" height="50" width="50" alt="">
@@ -223,6 +229,7 @@
                     id.value = select.id;
                     edit_quizz_subject.value = select.quizz_subject;
                     edit_class_name.value = select.class_name;
+                    status_id.value = select.status;
                     teacher.value = select.teacher;
                     photo_preview.src = '/' + select.cover_image;
                     $('#edit_quiz').modal('show');

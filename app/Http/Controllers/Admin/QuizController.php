@@ -34,6 +34,8 @@ class QuizController extends Controller
         if (request()->hasFile('cover_image')) {
             $quizstore->cover_image = Storage::put('/quizz', request()->file('cover_image'));
         }
+        $quizstore->status=1;
+
         $quizstore->save();
         return redirect()->back()->with('create','Quizz create Successfully');
     }
@@ -73,7 +75,7 @@ class QuizController extends Controller
     {
         $quiz_topic=Quiz::with('quiz_submit_user')->get();
 
-        // dd($quiz_topic[0]->quiz_submit_user);
+        // dd($quiz_topic->toArray());
         return view('admin.quiz_topic',compact('quiz_topic'));
     }
     public function quiz_topic_question($id)
@@ -88,10 +90,9 @@ class QuizController extends Controller
     {
         //function_body
         $quiz=quiz::find($id);
-        // $quiz_result=QuizResult::where('quiz_id',$id)->get();
-        $quiz_result=QuizResult::
-        where('quiz_id',$id)->select(DB::raw('count(*) as user_count, user_id,quiz_id'))
-        ->groupBy('user_id','quiz_id')
+        // $quiz_result=QuizResult::with('question_relation')->get();
+        $quiz_result=QuizResult::where('quiz_id',$id)->select(DB::raw('count(*) as user_count, user_id,quiz_id,submit_answer'))
+        ->groupBy('user_id','quiz_id','submit_answer')
         ->get();
         // dd($quiz_result->toArray());
         return view('admin.quiz_examiner',compact("quiz_result"));

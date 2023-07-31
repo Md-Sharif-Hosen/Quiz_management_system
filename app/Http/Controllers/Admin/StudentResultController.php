@@ -8,11 +8,11 @@ use Illuminate\Http\Request;
 
 class StudentResultController extends Controller
 {
-    //
-    // public function student_result()
-    // {
-    //     //function_body
-    //     $student_submut_quiz=Quiz::join('quiz')
-    //     return view('admin.student_result');
-    // }
+
+    public function student_result()
+    {
+        //function_body
+      
+        return view('admin.student_result');
+    }
 }

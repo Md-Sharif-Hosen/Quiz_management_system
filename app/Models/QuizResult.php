@@ -19,4 +19,9 @@ class QuizResult extends Model
         //function_body
         return $this->hasMany(Quiz::class,'id','quiz_id');
     }
+    public function question_relation()
+    {
+        //function_body
+        return $this->hasMany(Question::class,'id','ques_id');
+    }
 }
