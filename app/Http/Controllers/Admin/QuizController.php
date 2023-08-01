@@ -18,87 +18,95 @@ class QuizController extends Controller
     {
 
         //function_body
-        $class=Classes::get();
+        $class = Classes::get();
 
-        $quizz=Quiz::with('class_name_relation')->get();
+        $quizz = Quiz::with('class_name_relation')->get();
         // dd($quizz->toArray());
-        return view('admin.quizzes',compact('class','quizz'));
+        return view('admin.quizzes', compact('class', 'quizz'));
     }
     public function quiz_store(request $request)
     {
         //function_body
-        $quizstore=new Quiz();
-        $quizstore->quizz_subject=request('quizz_subject');
-        $quizstore->class_name=request('class_name');
-        $quizstore->teacher=request('teacher');
+        $quizstore = new Quiz();
+        $quizstore->quizz_subject = request('quizz_subject');
+        $quizstore->class_name = request('class_name');
+        $quizstore->teacher = request('teacher');
         if (request()->hasFile('cover_image')) {
             $quizstore->cover_image = Storage::put('/quizz', request()->file('cover_image'));
         }
-        $quizstore->status=1;
+        $quizstore->status = 1;
 
         $quizstore->save();
-        return redirect()->back()->with('create','Quizz create Successfully');
+        return redirect()->back()->with('create', 'Quizz create Successfully');
     }
     public function quiz_edit($id)
     {
         //function_body
-        $quiz_edit_data=Quiz::find($id);
+        $quiz_edit_data = Quiz::find($id);
         return response()->json([
-               'status'=>200,
-               'quiz_edit_data'=>$quiz_edit_data
+            'status' => 200,
+            'quiz_edit_data' => $quiz_edit_data
         ]);
     }
     public function quiz_update(request $request)
     {
         //function_body
-        $quiz_id=request('id');
-        $quiz_update=Quiz::find($quiz_id);
-        $quiz_update->quizz_subject=request('quizz_subject');
-        $quiz_update->class_name=request('class_name');
-        $quiz_update->teacher=request('teacher');
+        $quiz_id = request('id');
+        $quiz_update = Quiz::find($quiz_id);
+        $quiz_update->quizz_subject = request('quizz_subject');
+        $quiz_update->class_name = request('class_name');
+        $quiz_update->teacher = request('teacher');
         if (request()->hasFile('cover_image')) {
             $quiz_update->cover_image = Storage::put('/quizz', request()->file('cover_image'));
         }
         $quiz_update->save();
-        return redirect()->back()->with('Update','Quizz Update Successfully');
+        return redirect()->back()->with('Update', 'Quizz Update Successfully');
     }
-
-
     public function delete($id)
     {
         //function_body
-        $quiz_delete=Quiz::where('id',$id)->first();
+        $quiz_delete = Quiz::where('id', $id)->first();
         $quiz_delete->delete();
-        return redirect()->back()->with('Delete','Delete Quiz Successfully');
+        return redirect()->back()->with('Delete', 'Delete Quiz Successfully');
     }
     public function quiz_topic()
     {
-        $quiz_topic=Quiz::with('quiz_submit_user')->get();
+        $quiz_topic = Quiz::with('quiz_submit_user')->get();
 
         // dd($quiz_topic->toArray());
-        return view('admin.quiz_topic',compact('quiz_topic'));
+        return view('admin.quiz_topic', compact('quiz_topic'));
     }
     public function quiz_topic_question($id)
     {
         //function_body
-        $quiz=Quiz::find($id);
-        $quiz_topic_question=Question::where('quiz_id',$id)->get();
+        $quiz = Quiz::find($id);
+        $quiz_topic_question = Question::where('quiz_id', $id)->get();
 
-        return view('admin.quiz_topic_question',compact('quiz','quiz_topic_question'));
+        return view('admin.quiz_topic_question', compact('quiz', 'quiz_topic_question'));
     }
     public function quiz_examiner($id)
     {
         //function_body
-        $quiz=quiz::find($id);
-        // $quiz_result=QuizResult::with('question_relation')->where('quiz_id',$id)->get();
-        $quiz_result=QuizResult::where('quiz_id',$id)->select(DB::raw('user_id,quiz_id'))
-        ->groupBy('user_id','quiz_id')
+        $quiz = quiz::find($id);
+        // $quiz_result = QuizResult::where('quiz_id', $id)->get();
+
+        $quiz_result = DB::table('quiz_results')
+        ->join('quizzes', 'quiz_results.quiz_id', '=', 'quizzes.id')
+        ->join('questions', 'quiz_results.ques_id', '=', 'questions.id')
+        ->join('users', 'quiz_results.user_id', '=', 'users.id')
+        ->select(
+            'quizzes.*',
+            'users.*',
+            'quiz_results.user_id',
+            DB::raw('SUM(CASE WHEN quiz_results.submit_answer = questions.answer THEN 1 ELSE 0 END) AS marks')
+        )
+        ->where('quiz_results.quiz_id', $id)
+        ->groupBy('quizzes.id', 'quiz_results.user_id') // Group by both quiz ID and user ID to get marks per user for each quiz.
         ->get();
-        $question = Question::join('quiz_results', 'questions.answer', '=', 'quiz_results.submit_answer')
-        ->select('questions.*', 'quiz_results.submit_answer')
-        ->where('quiz_results.user_id')
-        ->count();
-        // dd($quiz_result->toArray());
-        return view('admin.quiz_examiner',compact("quiz_result"));
+            // dd($quiz_result);
+        // $quiz_result=QuizResult::where('quiz_id',$id)->select(DB::raw('user_id,quiz_id'))
+        // ->groupBy('user_id','quiz_id')
+        // ->get();
+        return view('admin.quiz_examiner', compact("quiz_result"));
     }
 }

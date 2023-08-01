@@ -16,13 +16,16 @@ class ExamController extends Controller
     public function examlist()
     {
         //function_body
-        $exam = Quiz::with('class_name_relation')->get();
+        $exam = Quiz::where('status',1)->get();
         return view('forntend.examlist', compact('exam'));
     }
     public function exam($id)
     {
         //function_body
-        $quiz = Quiz::find($id);
+        $quiz = Quiz::where('id',$id)->find($id);
+        $quiz->status=0;
+        $quiz->update();
+
         $question = Question::where('quiz_id', $id)->get();
         //dd($quiz);
         return view('forntend.exam', compact('quiz', 'question'));
@@ -41,6 +44,7 @@ class ExamController extends Controller
             ]);
         }
 
+
         return redirect()->route('result');
     }
 
@@ -50,9 +54,9 @@ class ExamController extends Controller
             ->select('quiz_results.*', 'questions.question_title')
             ->where('quiz_results.user_id', '=', Auth::user()->id)
             ->count();
-
         $question = Question::join('quiz_results', 'questions.id', '=', 'quiz_results.ques_id')
             ->select('questions.*', 'quiz_results.ques_id')
+            ->where('quiz_results.user_id', '=', Auth::user()->id)
             ->count();
             $incorrect=$question - $result;
         // dd($result, $question);

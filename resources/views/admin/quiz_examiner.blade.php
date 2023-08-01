@@ -16,25 +16,39 @@
                             </tr>
                         </thead>
                         <tbody>
+                            {{-- @php
+
+                                $result = 0;
+                                // dd($quiz_result->toArray());
+                            @endphp --}}
                             @foreach ($quiz_result as $data)
                                 <tr>
                                     <td>
+
                                         {{-- @dd($data->user_relation->toArray()) --}}
-                                        @foreach ($data->user_relation as $item)
-                                            {{ $item->name }}
-                                        @endforeach
+                                            {{ $data->name }}
+
                                     </td>
                                     <td>
                                         {{-- @dd($data->quiz_relation->toArray() ) --}}
-                                        @foreach ($data->quiz_relation as $item)
-                                            {{ $item->quizz_subject }}
-                                        @endforeach
+
+                                            {{ $data->quizz_subject }}
+
                                     </td>
                                     <td>
                                         {{-- @dd($data->question_relation->toArray() ) --}}
                                         {{-- @foreach ($data->question_relation as $item)
-                                        {{ $item->answer }}
+                                            @php
+                                                if ($data->answer == $item->submit_answer) {
+                                                    # code...
+                                                    $result += 1;
+                                                }
+                                            @endphp
+                                            {{ $item->answer }}
+                                            {{ $result }}
                                         @endforeach --}}
+                                        {{ $data->marks }}
+
                                     </td>
                                 </tr>
                             @endforeach
