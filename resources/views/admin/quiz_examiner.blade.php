@@ -17,8 +17,9 @@
                         </thead>
                         <tbody>
                             @foreach ($quiz_result as $data)
-                            <tr>
+                                <tr>
                                     <td>
+                                        {{-- @dd($data->user_relation->toArray()) --}}
                                         @foreach ($data->user_relation as $item)
                                             {{ $item->name }}
                                         @endforeach
@@ -26,18 +27,17 @@
                                     <td>
                                         {{-- @dd($data->quiz_relation->toArray() ) --}}
                                         @foreach ($data->quiz_relation as $item)
-                                            {{ $item }}
+                                            {{ $item->quizz_subject }}
                                         @endforeach
                                     </td>
-                                       {{-- @dd($data->question_relation->toArray() )
-                                    @foreach ($data->question_relation as $item)
-                                    {{ $item->answer }}
-                                @endforeach --}}
                                     <td>
-
+                                        {{-- @dd($data->question_relation->toArray() ) --}}
+                                        {{-- @foreach ($data->question_relation as $item)
+                                        {{ $item->answer }}
+                                        @endforeach --}}
                                     </td>
                                 </tr>
-                                @endforeach
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

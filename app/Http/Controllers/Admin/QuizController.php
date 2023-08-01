@@ -90,10 +90,14 @@ class QuizController extends Controller
     {
         //function_body
         $quiz=quiz::find($id);
-        // $quiz_result=QuizResult::with('question_relation')->get();
-        $quiz_result=QuizResult::where('quiz_id',$id)->select(DB::raw('count(*) as user_count, user_id,quiz_id,submit_answer'))
-        ->groupBy('user_id','quiz_id','submit_answer')
+        // $quiz_result=QuizResult::with('question_relation')->where('quiz_id',$id)->get();
+        $quiz_result=QuizResult::where('quiz_id',$id)->select(DB::raw('user_id,quiz_id'))
+        ->groupBy('user_id','quiz_id')
         ->get();
+        $question = Question::join('quiz_results', 'questions.answer', '=', 'quiz_results.submit_answer')
+        ->select('questions.*', 'quiz_results.submit_answer')
+        ->where('quiz_results.user_id')
+        ->count();
         // dd($quiz_result->toArray());
         return view('admin.quiz_examiner',compact("quiz_result"));
     }
