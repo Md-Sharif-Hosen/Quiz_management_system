@@ -17,7 +17,8 @@
                                         {{-- @dd(Auth::user()->load("user_role")); --}}
 
 
-                                        <span class="text-primary">{{ Auth::user()->load("user_role")->user_role->title }} </span>
+                                        <span class="text-primary">{{ Auth::user()->load('user_role')->user_role->title }}
+                                        </span>
                                     </div>
                                     <ul class=" mb-1-9 "
                                         style="    font-size: 20px;
@@ -124,8 +125,8 @@
                                     margin: 0px;">
                                     Many desktop publishing packages and web page editors now use Lorem Ipsum as their
                                     default model text, and a search for 'lorem ipsum' will uncover many web sites still
-                                     There are many variations of passages of Lorem Ipsum available, but
-                                        the majority have suffered alteration in some form, by injected humour.class="mb-1-9"
+                                    There are many variations of passages of Lorem Ipsum available, but
+                                    the majority have suffered alteration in some form, by injected humour.class="mb-1-9"
                                     in their infancy.</p>
 
                             </div>

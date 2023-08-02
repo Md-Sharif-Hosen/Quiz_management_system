@@ -12,10 +12,10 @@
                     <input type="hidden" name="quiz_id" value="{{ $quiz->id }}">
                     {{-- <input type="text" name="user_id" value="{{ Auth::user()->id  }}"> --}}
                     <section style="    padding-left: 220px;
-                    padding-top: 55px;
-                }">
+                    padding-top: 55px;}">
 
                         @foreach ($question as $key => $data)
+                        {{-- <input type="text" name="quiz_id" value="{{ $data->quiz_id }}"> --}}
                             <input type="hidden" name="ques_id[]" value="{{ $data->id }}">
                             {{-- <input type="hidden" name="answer{{ $key + 1 }}" value="0"> --}}
                             <div style="padding: 10px">

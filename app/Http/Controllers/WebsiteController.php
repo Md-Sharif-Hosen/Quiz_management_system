@@ -27,7 +27,7 @@ class WebsiteController extends Controller
     public function profile()
     {
         //function_body
-       $result=QuizResult::where('quiz_results.user_id', '=', Auth::user()->id)->get();
+       
         return view('forntend.profile',compact('result'));
     }
 
