@@ -47,6 +47,39 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-12 mb-4  card card-style1">
+                    <div>
+                        <span class="section-title text-primary mb-3 mb-sm-4">Your Submit Exam</span>
+                    </div>
+                    <table class="table  table-striped table-bordered">
+                        <thead
+                            style="
+                     font-size: 16px;
+                     font-weight: 400;
+                     line-height: 28px;
+                     color: #ffffff;
+                     margin: 0px;">
+                            >
+                            <tr>
+                                <th>Subject</th>
+                                <th>Marks</th>
+                            </tr>
+                        </thead>
+                        <tbody   style="
+                        font-size: 16px;
+                        font-weight: 400;
+                        line-height: 28px;
+                        color: #ffffff;
+                        margin: 0px;">>
+                            @foreach ($quiz_result as $data )
+                            <tr>
+                                <td >{{$data->quizz_subject }}</td>
+                                <td>{{$data->marks }} Out off {{$data->questions }}</td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
                 <div class="col-lg-12 mb-4 mb-sm-5 card card-style1">
                     <div>
                         <span class="section-title text-primary mb-3 mb-sm-4">About Me</span>

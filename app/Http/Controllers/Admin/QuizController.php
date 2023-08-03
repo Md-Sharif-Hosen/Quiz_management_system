@@ -99,6 +99,7 @@ class QuizController extends Controller
             'users.*',
             'quiz_results.user_id',
             DB::raw('SUM(CASE WHEN quiz_results.submit_answer = questions.answer THEN 1 ELSE 0 END) AS marks')
+            // DB::raw('SUM(CASE WHEN quiz_results.ques_Id = questions.id THEN 1 ELSE 0 END) AS questions')
         )
         ->where('quiz_results.quiz_id', $id)
         ->groupBy('quizzes.id', 'quiz_results.user_id') // Group by both quiz ID and user ID to get marks per user for each quiz.

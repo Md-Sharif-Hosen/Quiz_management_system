@@ -10,11 +10,13 @@
                         {{ $quiz_subject->quizz_subject }}
                          quiz result is here.</h2>
                         <br>
-                        <h5>Total Quizz: {{ $question }}</h5>
+                        <h5>Total Question: {{ $question }}</h5>
                         <br>
                         <h5>Correct Answer: {{ $result }}</h5>
                         <br>
                         <h5>Incorrect Answer: {{ $incorrect }}</h5>
+                        <br>
+                        <h5>Passing Rate: {{$percentage}}%</h5>
                         <br>
                         <h5>
                             <a class="btn btn-info" href="{{ route('result_details',$quiz_subject->id) }}">view details</a>

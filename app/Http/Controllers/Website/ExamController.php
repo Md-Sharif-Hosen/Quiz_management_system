@@ -17,7 +17,7 @@ class ExamController extends Controller
     {
         //function_body
         $exam = Quiz::get();
-        return view('forntend.examlist', compact('exam'));
+        return view('forntend.examlist', compact('exam','quiz_results'));
     }
     public function exam($id)
     {
@@ -61,8 +61,11 @@ class ExamController extends Controller
         ->Where('quiz_results.user_id', '=', Auth::user()->id)
         ->count();
         $incorrect = $question - $result;
+        $average=$question/$incorrect;
+        $percentage = ($average/$question) * 100;
+        // dd($percentage);
        $quiz_subject=Quiz::where('id',$quiz_id)->first();
-        return view('forntend.result', compact('result', 'question', 'incorrect','quiz_subject'));
+        return view('forntend.result', compact('result', 'question', 'incorrect','quiz_subject','percentage'));
     }
 
     public function result_details($id)
@@ -71,8 +74,10 @@ class ExamController extends Controller
         ->select('quiz_results.*','questions.*')
         ->where('quiz_results.quiz_id','=',$id)
         ->get();
-        dd($result_details);
+        $quiz=Quiz::where('id',$id)->first();
+        // dd($result_details->toArray());
+        // dd($quiz);
         //function_body
-        return view('forntend.result_details',compact('result_details',$id));
+        return view('forntend.result_details',compact('result_details','quiz'));
     }
 }
