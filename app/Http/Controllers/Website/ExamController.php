@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Question;
 use App\Models\Quiz;
 use App\Models\QuizResult;
+use App\Models\UserQuiz;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -16,17 +17,41 @@ class ExamController extends Controller
     public function examlist()
     {
         //function_body
-        $exam = Quiz::get();
-        return view('forntend.examlist', compact('exam','quiz_results'));
+        // $exam = Quiz::
+        // join('user_quizzes','quizzes.id','=','user_quizzes.quiz_id')
+        // ->select('quizzes.*','user_quizzes.*')
+        // ->where('user_quizzes.user_id',Auth::user()->id)
+        // ->where('user_quizzes.quiz_id','quizzes.id')
+        // ->get();
+        $users=Auth::user();
+        $quizes =Quiz::whereNotExists(
+            function($query) use($users) {
+              $query->from('user_quizzes')
+                    ->where('user_id', $users->id)
+                    ->whereColumn('quizzes.id','user_quizzes.quiz_id');
+            })->get();
+        // dd($quizes->toArray());
+        return view('forntend.examlist', compact('quizes'));
     }
-    public function exam($id)
+    public function quiz_userid_store(request $request)
     {
         //function_body
-        $quiz = Quiz::where('id', $id)->find($id);
+        // $quizz=Quiz::first();
+        $quiz_userid_save=new UserQuiz();
+        $quiz_userid_save->user_id=Auth::user()->id;
+        $quiz_userid_save->quiz_id=request('quiz_id');
+        $quiz_userid_save->save();
+        $quizz=request('quiz_id');
+        return redirect()->route('exam',$quizz);
+    }
+    public function exam($quizz)
+    {
+        //function_body
+        $quiz = Quiz::where('id', $quizz)->find($quizz);
         // $quiz->status=0;
         // $quiz->update();
 
-        $question = Question::where('quiz_id', $id)->get();
+        $question = Question::where('quiz_id', $quizz)->get();
         //dd($quiz);
         return view('forntend.exam', compact('quiz', 'question'));
     }

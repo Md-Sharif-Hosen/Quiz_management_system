@@ -4,13 +4,13 @@
         <div class="col md-6 sm-3 lg-12">
             <div class="card ">
                 <div class="card-header justify-content-center">
-                    <h2 class="text-center" style="color: rgb(44 1 1);">Subject list</h2>
+                    <h2 class="text-center" style="color: rgb(44 1 1);">Quizzes list</h2>
                 </div>
                 <div class="d-flex justify-content-between">
 
                     <div>
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                            data-bs-whatever="@mdo">Subject Create</button>
+                            data-bs-whatever="@mdo">QuiZZ Create</button>
                     </div>
                     @if (session()->get('create'))
                         <script>
@@ -28,7 +28,7 @@
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Quizzes Create</h1>
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Quizz Create</h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
@@ -53,12 +53,14 @@
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label">Teacher Name</label>
                                             <select class="form-control" name="teacher" id="teacher">
-                                                <option value="{{ auth()->user()->name }}">{{ auth()->user()->name }}</option>
+                                                <option value="{{ auth()->user()->name }}">{{ auth()->user()->name }}
+                                                </option>
                                             </select>
                                         </div>
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label">Quizz Banner</label>
-                                            <input class="form-control" type="file" id="photo" accept="image/*" name="cover_image">
+                                            <input class="form-control" type="file" id="photo" accept="image/*"
+                                                name="cover_image">
 
                                         </div>
                                         <div class="modal-footer d-flex justify-content-between">
@@ -104,6 +106,9 @@
                                     <th>Teacher</th>
                                     <th>Status</th>
                                     <th>Quizz Banner</th>
+                                    <th>Quizz All Question</th>
+                                    <th>Total Examineer</th>
+                                    <th>Quizz Banner</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -119,8 +124,25 @@
                                             @endif
                                         </td>
                                         <td>{{ $data->teacher }}</td>
-                                        <td>{{ $data->status }}</td>
-                                        <td><img src="/{{ $data->cover_image }}" style="height:50px;width:50px" alt=""></td>
+                                        <td>
+                                            {{ $data->status }}
+                                            {{-- <label class="switch">
+                                                <input type="checkbox" name="status" class="checkIt" value="{{ $data->status }}">
+                                                <span class="slider round"></span>
+                                            </label>
+                                            <script type="text/javascript">
+                                                $('.checkIt').bind('click', function() {
+                                                    if($(this).is(":checked")) {
+                                                        // checkbox is checked
+                                                    } else {
+                                                        // checkbox is not checked
+                                                    }
+                                                });
+                                            </script> --}}
+
+                                        </td>
+                                        <td><img src="/{{ $data->cover_image }}" style="height:50px;width:50px"
+                                                alt=""></td>
                                         <td>
                                             <button type="button" class="btn btn-primary edit_btn"
                                                 value="{{ $data->id }}">Edit</button>
@@ -181,15 +203,22 @@
                                             </option>
                                         </select>
                                     </div>
+
                                     <div class="mb-3">
                                         <label for="recipient-name" class="col-form-label">Status</label>
-                                        <input type="text" class="form-control" name="status"
-                                            id="status_id">
+                                        <input type="text" class="form-control" name="status" id="status_id">
+                                            {{-- <label class="switch col-form-label" class="form-control" > Status
+                                                <input type="checkbox" value="{{ $data->status }}" id="status_id">
+                                                <span class="slider round"></span>
+                                            </label> --}}
+
                                     </div>
                                     <div class="mb-3">
                                         <label for="recipient-name" class="col-form-label">Quizz Banner</label>
-                                        <input class="form-control" type="file" id="photo" accept="image/*" name="cover_image">
-                                        <img src="" id="photo_preview" height="50" width="50" alt="">
+                                        <input class="form-control" type="file" id="photo" accept="image/*"
+                                            name="cover_image">
+                                        <img src="" id="photo_preview" height="50" width="50"
+                                            alt="">
                                     </div>
                                     <div class="modal-footer d-flex justify-content-between">
                                         <button type="button" class="btn btn-secondary"
@@ -218,13 +247,12 @@
     $(document).ready(function() {
         $(document).on('click', '.edit_btn', function() {
             var class_id = $(this).val();
-
             $.ajax({
                 type: "GET",
                 url: "/dashboard/quiz_edit/" + class_id,
                 success: function(response) {
-                    console.log(response);
-                    console.log(response.quiz_edit_data);
+                    // console.log(response);
+                    // console.log(response.quiz_edit_data);
                     let select = response.quiz_edit_data;
                     id.value = select.id;
                     edit_quizz_subject.value = select.quizz_subject;

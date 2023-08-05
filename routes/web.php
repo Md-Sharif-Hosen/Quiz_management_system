@@ -26,7 +26,8 @@ Route::group(['prefix' => '', 'middleware' => ['isstudent']], function () {
     Route::get('/', 'WebsiteController@index')->name("home");
     //exam
     Route::get('/examlist', 'Website\ExamController@examlist')->name('examlist');
-    Route::get('/exam/{id}', 'Website\ExamController@exam')->name('exam');
+    Route::post('/quiz_userid', 'Website\ExamController@quiz_userid_store')->name('quiz_userid');
+    Route::get('/exam/{quizz}', 'Website\ExamController@exam')->name('exam');
     Route::post('/exam/store', 'Website\ExamController@exam_store')->name('exam.store');
     //exam_result
     Route::get('/result/{quiz_id}', 'Website\ExamController@result')->name('result');
