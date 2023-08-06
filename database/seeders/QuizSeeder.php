@@ -27,7 +27,7 @@ class QuizSeeder extends Seeder
             "quizz_subject"=>"Math",
             "class_name"=>2,
             "teacher"=>"Md.Sharif Ahmed",
-            "cover_image"=>"quizz/math.jpg",
+            "cover_image"=>"quizz/math.webp",
             'status'=>1
         ]);
 

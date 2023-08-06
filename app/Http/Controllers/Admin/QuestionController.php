@@ -65,8 +65,13 @@ class QuestionController extends Controller
         //function_body
         $question_id = request('id');
         $question_update_data = Question::find($question_id);
-        $question_update_data->Question_subject = request('Question_subject');
+        $question_update_data->quiz_id = request('quiz_id');
         $question_update_data->question_title = request('question_title');
+        $question_update_data->optionA = request('optionA');
+        $question_update_data->optionB = request('optionB');
+        $question_update_data->optionC = request('optionC');
+        $question_update_data->optionD = request('optionD');
+        $question_update_data->answer = request('answer');
         $question_update_data->Update();
         return redirect()->back()->with('Update', 'Question Update Successfully');
     }

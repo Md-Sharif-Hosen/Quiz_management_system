@@ -5,10 +5,10 @@
             <div class="col-md-4"></div>
             <div class="col-md-4">
                 @foreach ($errors->all() as $error)
-                <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                    <strong></strong>{{ $error }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                  </div>
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong></strong>{{ $error }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
                 @endforeach
 
             </div>
@@ -65,12 +65,12 @@
                         <table class="table col md-6 sm-3 lg-12">
                             <thead>
                                 <tr>
-                                    <th>SL N0</th>
-                                    <th>Quizz Subject</th>
-                                    <th>Question Title</th>
-                                    <th>Options</th>
-                                    <th>Answer</th>
-                                    <th>Action</th>
+                                    <th><b>SL N0</b></th>
+                                    <th><b>Quizz Subject</b></th>
+                                    <th><b>Question Title</b></th>
+                                    <th><b>Options</b></th>
+                                    <th><b>Answer</b></th>
+                                    <th><b>Action</b></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -84,10 +84,10 @@
                                         </td>
                                         <td>{{ $item->question_title }}</td>
                                         <td>
-                                            {{ $item->optionA }},
-                                            {{ $item->optionB }},
-                                            {{ $item->optionC}},
-                                            {{ $item->optionD }}
+                                            A {{ $item->optionA }} <br>
+                                            B. {{ $item->optionB }},<br>
+                                            C. {{ $item->optionC }},<br>
+                                            D. {{ $item->optionD }}
                                         </td>
                                         <td>
                                             {{ $item->answer }}
@@ -133,7 +133,7 @@
                                 @csrf
                                 <div class="col-sm-3 mb-4">
                                     <label for="recipient-name" class="col-form-label">Quiz Subject</label>
-                                    <select class="form-control" name="quiz_id" id="quizz_subject">
+                                    <select class="form-control" name="quiz_id" id="">
                                         <option value="">select</option>
                                         @foreach ($quiz as $data)
                                             <option value="{{ $data->id }}">{{ $data->quizz_subject }}</option>
@@ -176,11 +176,22 @@
                     </div>
                 </div>
             </div>
+            @if (session()->get('Update'))
+                <script>
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: '{{ session()->get('Update') }}',
+                        showConfirmButton: false,
+                        timer: 1000
+                    })
+                </script>
+            @endif
 
             {{-- Edit Question modal --}}
             <div class="modal fade" id="edit_question" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
-                <div class="modal-dialog">
+                <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h1 class="modal-title fs-5" id="exampleModalLabel">Question Create</h1>
@@ -191,11 +202,10 @@
                             <form method="post" action="{{ route('question_update') }}" enctype="multipart/form-data">
                                 @csrf
                                 @method('put')
-                                <input type="hidden" id="id" name="id">
-                                <div class="mb-3">
+                                <input type="text" id="id" name="id">
+                                <div class="mb-3 col-sm-3 mb-4">
                                     <label for="recipient-name" class="col-form-label">Quiz Subject</label>
-                                    <select class="form-control" name="Question_subject" id="subject">
-                                        <option value="">select</option>
+                                    <select class="form-control " name="quiz_id" id="quiz_subject">
                                         @foreach ($quiz as $data)
                                             <option value="{{ $data->id }}">{{ $data->quizz_subject }}</option>
                                         @endforeach
@@ -204,6 +214,30 @@
                                 <div class="mb-3">
                                     <label for="recipient-name" class="col-form-label">Question Title</label>
                                     <input type="text" class="form-control" name="question_title" id="title">
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6"><label for="">A:</label></div>
+                                    <div class="col-md-6"><label for="">B:</label></div>
+                                </div>
+                                <div class="row mb-4">
+                                    <div class="col-md-6"><input class="form-control" type="text" id="optionA_id"
+                                            name="optionA"></div>
+                                    <div class="col-md-6"><input class="form-control" type="text" id="optionB_id"
+                                            name="optionB"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6"><label for="">C:</label></div>
+                                    <div class="col-md-6"><label for="">D:</label></div>
+                                </div>
+                                <div class="row mb-4">
+                                    <div class="col-md-6"><input class="form-control" type="text" id="optionC_id"
+                                            name="optionC"></div>
+                                    <div class="col-md-6"><input class="form-control" type="text" id="optionD_id"
+                                            name="optionD"></div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="recipient-name" class="col-form-label">Answer</label>
+                                    <input type="text" class="form-control" name="answer" id="answer_id">
                                 </div>
 
                                 <div class="modal-footer d-flex justify-content-between">
@@ -239,8 +273,13 @@
                     console.log(response.question_edit_data);
                     let select = response.question_edit_data;
                     id.value = select.id;
-                    subject.value = select.Question_subject;
+                    quiz_subject.value = select.quiz_id;
                     title.value = select.question_title;
+                    optionA_id.value = select.optionA;
+                    optionB_id.value = select.optionB;
+                    optionC_id.value = select.optionC;
+                    optionD_id.value = select.optionD;
+                    answer_id.value = select.answer;
                     $('#edit_question').modal('show');
                 }
             });

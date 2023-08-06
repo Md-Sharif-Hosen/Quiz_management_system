@@ -6,13 +6,16 @@
                 <div class="card-header">
                     <h2>Examinner name</h2>
                 </div>
+                <div>
+                    <a href="{{ route('quiz') }}" class="btn btn-info">Back</a>
+                </div>
                 <div class="card-body">
                     <table class="table table-striped table-responsive">
                         <thead>
                             <tr>
                                 <th>Name</th>
                                 <th>Subject</th>
-                                <th>Mark</th>
+                                <th>Marks</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -47,7 +50,7 @@
                                             {{ $item->answer }}
                                             {{ $result }}
                                         @endforeach --}}
-                                        {{ $data->marks }}
+                                        <b>{{ $data->marks }}</b>  out off <b>{{ $data->questions }}</b>
 
                                     </td>
                                 </tr>

@@ -102,19 +102,19 @@
                                                 </ul>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="{{ asset('assets/website') }}/about.html">About us</a>
+                                                <a href="{{ route('about') }}">About us</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="{{ asset('assets/website') }}/courses.html">Courses</a>
+                                                <a href="{{ route('courses') }}">Courses</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="{{ asset('assets/website') }}/teachers.html">Our teachers</a>
+                                                <a href="{{ route('teacher') }}">Our teachers</a>
                                             </li>
                                             <li class="nav-item">
                                                 <a href="{{ route('examlist') }}">Exam</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="{{ asset('assets/website') }}/contact.html">Contact Us</a>
+                                                <a href="{{ route('contacts') }}">Contact Us</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -181,19 +181,19 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ asset('assets/website') }}/about.html">About us</a>
+                                    <a href="{{ route('about') }}">About us</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ asset('assets/website') }}/courses.html">Courses</a>
+                                    <a href="{{ route('courses') }}">Courses</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ asset('assets/website') }}/teachers.html">Our teachers</a>
+                                    <a href="{{ route('teacher') }}">Our teachers</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ route('examlist') }}">Exam</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ asset('assets/website') }}/contact.html">Contact Us</a>
+                                    <a href="{{ route('contacts') }}">Contact Us</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="" href="{{ route('login') }}">Login</a>

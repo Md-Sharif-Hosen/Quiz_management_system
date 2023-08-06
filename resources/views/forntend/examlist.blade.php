@@ -22,12 +22,11 @@
                                 <div class="sub" style="">
                                     <h2 class="title" style="color: #fff1e6;">{{ $data->quizz_subject }}</h2>
                                     <div class="price">
-
                                         <form  class="btn" action="{{ route('quiz_userid') }}" method="post">
                                             @csrf
                                             <input type="hidden" name="quiz_id" value="{{ $data->id }}">
                                             <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
-                                            <button type="submit" >Start Quiz</button>
+                                            <button type="submit" onclick="return confirm('Do you want Start Quizz')" class="btn btn-outline-info" >Start Quiz</button>
                                         </form>
                                     </div>
                                 </div>

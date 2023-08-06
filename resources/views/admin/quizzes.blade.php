@@ -100,16 +100,15 @@
                         <table class="table col md-6 sm-3 lg-12">
                             <thead>
                                 <tr>
-                                    <th>SL N0</th>
-                                    <th>Quizz Subject</th>
-                                    <th>Class Name</th>
-                                    <th>Teacher</th>
-                                    <th>Status</th>
-                                    <th>Quizz Banner</th>
-                                    <th>Quizz All Question</th>
-                                    <th>Total Examineer</th>
-                                    <th>Quizz Banner</th>
-                                    <th>Action</th>
+                                    <th><b>SL N0</b></th>
+                                    <th><b>Quizz Subject</b></th>
+                                    <th><b>Class Name</b></th>
+                                    <th><b>Teacher</b></th>
+                                    <th><b>Status</b></th>
+                                    <th><b>Quizz Banner</b></th>
+                                    <th><b>Quizz All Question</b></th>
+                                    <th><b>Total Examineer</b></th>
+                                    <th><b>Action</b></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -139,18 +138,40 @@
                                                     }
                                                 });
                                             </script> --}}
-
                                         </td>
                                         <td><img src="/{{ $data->cover_image }}" style="height:50px;width:50px"
-                                                alt=""></td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary edit_btn"
-                                                value="{{ $data->id }}">Edit</button>
-                                            <a href="{{ route('quiz_delete', $data->id) }}"
-                                                onclick="return confirm('Do you want to Delete')"
-                                                class="btn btn-outline-danger">Delete</a>
+                                                alt="">
                                         </td>
-                                    </tr>
+                                        <td>
+                                            Total Question:
+                                                @if ($data->question_relations)
+                                                <b> {{ $data->question_relations->where('quiz_id', $data->id)->count('ques_id') }}
+                                            </b> <br> <a href="{{ route('quiz_topic_question', $data->id) }}"
+                                                class="btn btn-info">View details</a>
+                                        @else
+                                            <b>0</b>
+                                @endif
+
+                                </td>
+                                <td>
+                                    Participent:
+                                        @if ($data->quiz_submit_user)
+                                        <b>  {{ $data->quiz_submit_user->where('quiz_id', $data->id)->pluck('user_id')->unique()->count('user_id') }}
+                                    </b>
+                                    <br> <a href="{{ route('quiz_examiner', $data->id) }}" class="btn btn-info">View
+                                        details</a>
+                                @else
+                                    <b>0</b>
+                                    @endif
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-primary edit_btn"
+                                        value="{{ $data->id }}">Edit</button>
+                                    <a href="{{ route('quiz_delete', $data->id) }}"
+                                        onclick="return confirm('Do you want to Delete')"
+                                        class="btn btn-outline-danger">Delete</a>
+                                </td>
+                                </tr>
                                 @endforeach
                             </tbody>
                         </table>
@@ -207,7 +228,7 @@
                                     <div class="mb-3">
                                         <label for="recipient-name" class="col-form-label">Status</label>
                                         <input type="text" class="form-control" name="status" id="status_id">
-                                            {{-- <label class="switch col-form-label" class="form-control" > Status
+                                        {{-- <label class="switch col-form-label" class="form-control" > Status
                                                 <input type="checkbox" value="{{ $data->status }}" id="status_id">
                                                 <span class="slider round"></span>
                                             </label> --}}

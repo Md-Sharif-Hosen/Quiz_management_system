@@ -10,7 +10,6 @@
                 <form action="{{ route('exam.store') }}" method="post">
                     @csrf
                     <input type="hidden" name="quiz_id" value="{{ $quiz->id }}">
-                    {{-- <input type="text" name="user_id" value="{{ Auth::user()->id  }}"> --}}
                     <section style="    padding-left: 220px;
                     padding-top: 55px;}">
 

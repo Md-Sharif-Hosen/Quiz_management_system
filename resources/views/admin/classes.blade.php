@@ -25,7 +25,7 @@
         <div class="col md-6 sm-3 lg-12">
             <div class="card ">
                 <div class="card-header justify-content-center">
-                    <h2 class="text-center" style="color: rgb(62, 99, 223)">Class list</h2>
+                    <h2 class="text-center" style="color: rgb(62, 99, 223)"><b>Class list</b></h2>
                 </div>
                 <div class="d-flex justify-content-between">
 
@@ -68,11 +68,11 @@
                         <table class="table col md-6 sm-3 lg-12">
                             <thead>
                                 <tr>
-                                    <th>SL N0</th>
-                                    <th>Class Name</th>
-                                    <th>Class Room No.</th>
-                                    <th>Teacher Name</th>
-                                    <th>Action</th>
+                                    <th><b>SL N0</b></th>
+                                    <th><b>Class Name</b></th>
+                                    <th><b>Class Room No</b></th>
+                                    <th><b>Teacher Name</b></th>
+                                    <th><b>Action</b></th>
                                 </tr>
                             </thead>
                             <tbody>
