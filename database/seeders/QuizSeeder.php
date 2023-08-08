@@ -39,7 +39,7 @@ class QuizSeeder extends Seeder
         ]);
         Quiz::create([
             "quizz_subject"=>"C++",
-            "class_name"=>4,
+            "class_name"=>2,
             "teacher"=>"Md.Sharif Ahmed",
             "cover_image"=>"quizz/C++.png",
             'status'=>1
