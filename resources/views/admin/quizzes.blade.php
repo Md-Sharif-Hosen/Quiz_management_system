@@ -174,7 +174,12 @@
                                 </tr>
                                 @endforeach
                             </tbody>
-                        </table>
+                         </table>
+
+                    @if ($quizz)
+                    {{ $quizz->links() }}
+                    @endif
+
                     </div>
                 </div>
                 @if (session()->get('Update'))

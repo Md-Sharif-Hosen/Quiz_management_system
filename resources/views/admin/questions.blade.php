@@ -104,6 +104,7 @@
                                 @endforeach
                             </tbody>
                         </table>
+                        {{ $question->links() }}
                     </div>
                 </div>
             </div>

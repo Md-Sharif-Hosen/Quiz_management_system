@@ -69,7 +69,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="row mb-3">
+                        {{-- <div class="row mb-3">
                             <label for="role_id" class="col-md-4 col-form-label text-md-right"  style="color: #feffd8">Role</label>
 
                             <div class="col-md-8">
@@ -89,7 +89,7 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="row mb-3">
                             <label for="image" class="col-md-4 col-form-label text-md-right"   style="color: #feffd8">Image</label>
 

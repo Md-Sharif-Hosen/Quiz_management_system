@@ -79,7 +79,8 @@
                     <div class="col-lg-11 col-md-10 col-sm-9 col-9">
                         <nav class="navbar navbar-expand-lg">
                             <a class="navbar-brand" href="">
-                                <img src="{{ asset('assets/website') }}/images/logo-2.png" alt="Logo">
+                                <img src="
+                                " alt="Logo">
                             </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse"
                                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"

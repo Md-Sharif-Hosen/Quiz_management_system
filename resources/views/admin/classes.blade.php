@@ -93,6 +93,7 @@
                                 @endforeach
                             </tbody>
                         </table>
+                        {{ $classes_view->links() }}
                     </div>
                 </div>
             </div>

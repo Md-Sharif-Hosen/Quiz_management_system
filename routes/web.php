@@ -36,7 +36,7 @@ Route::group(['prefix' => '', 'middleware' => ['isstudent']], function () {
 
     //about
     Route::get('/about', 'WebsiteController@about')->name('about');
- 
+
     //exam
     Route::get('/examlist', 'Website\ExamController@examlist')->name('examlist');
     Route::post('/quiz_userid', 'Website\ExamController@quiz_userid_store')->name('quiz_userid');
@@ -77,5 +77,4 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['isadmin'], 'namespace' 
     Route::get('/question_delete/{id}', 'QuestionController@question_delete')->name('question_delete');
 
     //Student Result
-    Route::get('/student_result', 'StudentResultController@student_result')->name('student_result');
 });

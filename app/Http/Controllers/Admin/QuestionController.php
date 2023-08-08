@@ -14,7 +14,7 @@ class QuestionController extends Controller
     {
         //function_body
         $quiz = Quiz::get();
-        $question = Question::with('quizz_relation')->get();
+        $question = Question::with('quizz_relation')->paginate(3);
         return view('admin.questions', compact('quiz', 'question'));
     }
 

@@ -12,7 +12,7 @@ class ClassesController extends Controller
     public function classes()
     {
         //function_body
-        $classes_view = Classes::get();
+        $classes_view = Classes::paginate(4);
         return view('admin.classes', compact('classes_view'));
     }
     public function classes_store(request $request)
