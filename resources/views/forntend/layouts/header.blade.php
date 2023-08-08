@@ -79,7 +79,7 @@
                     <div class="col-lg-11 col-md-10 col-sm-9 col-9">
                         <nav class="navbar navbar-expand-lg">
                             <a class="navbar-brand" href="">
-                                <img src="
+                                <img src="{{ asset('assets/website') }}/images/logo-2.png
                                 " alt="Logo">
                             </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -140,7 +140,7 @@
                                             @else
                                                 @if (Auth::check() && Auth::user()->role_id == '2')
                                                     <img class="rounded-circle header-profile-user"
-                                                        src="/{{ Auth::user()->image }}" alt="Header Avatar">
+                                                        src="/{{ Auth::user()->image }}" alt="">
                                                     <span class="d-none d-xl-inline-block ms-1" key="t-henry"
                                                         style="    font-size: 17px;
                                                     font-family: 'Montserrat', sans-serif;

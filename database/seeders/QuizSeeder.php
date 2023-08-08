@@ -30,6 +30,20 @@ class QuizSeeder extends Seeder
             "cover_image"=>"quizz/math.webp",
             'status'=>1
         ]);
+        Quiz::create([
+            "quizz_subject"=>"Digital computer system",
+            "class_name"=>3,
+            "teacher"=>"Md.Sharif Ahmed",
+            "cover_image"=>"quizz/computer.webp",
+            'status'=>1
+        ]);
+        Quiz::create([
+            "quizz_subject"=>"C++",
+            "class_name"=>4,
+            "teacher"=>"Md.Sharif Ahmed",
+            "cover_image"=>"quizz/C++.png",
+            'status'=>1
+        ]);
 
     }
 }

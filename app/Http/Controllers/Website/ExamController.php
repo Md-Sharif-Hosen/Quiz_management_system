@@ -86,8 +86,8 @@ class ExamController extends Controller
         ->Where('quiz_results.user_id', '=', Auth::user()->id)
         ->count();
         $incorrect = $question - $result;
-        $average=$question/$incorrect;
-        $percentage = ($average/$question) * 100;
+        // $average=$question/$incorrect;
+        $percentage =100/$question*$result;
         // dd($percentage);
        $quiz_subject=Quiz::where('id',$quiz_id)->first();
         return view('forntend.result', compact('result', 'question', 'incorrect','quiz_subject','percentage'));

@@ -37,11 +37,11 @@ class QuestionSeeder extends Seeder
         Question::create([
             'quiz_id'=>1,
             'question_title'=>"Identify the invalid constant used in fseek() function as ‘whence’ reference.?",
-            'optionA'=>'- SEEK_END',
-            "optionB"=>" - SEEK_BEG",
-            "optionC"=>"- SEEK_SET",
-            "optionD"=>"- SEEK_CUR",
-            "answer"=>" - SEEK_BEG"
+            'optionA'=>'-SEEK_END',
+            "optionB"=>"-SEEK_BEG",
+            "optionC"=>"-SEEK_SET",
+            "optionD"=>"-SEEK_CUR",
+            "answer"=>"-SEEK_BEG"
         ]);
         Question::create([
             'quiz_id'=>1,
