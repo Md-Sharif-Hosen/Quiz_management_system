@@ -41,7 +41,7 @@ class QuizSeeder extends Seeder
             "quizz_subject"=>"C++",
             "class_name"=>2,
             "teacher"=>"Md.Sharif Ahmed",
-            "cover_image"=>"quizz/C++.png",
+            "cover_image"=>"quizz/c puls.jpg",
             'status'=>1
         ]);
 
