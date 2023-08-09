@@ -59,7 +59,7 @@
                      line-height: 28px;
                      color: #ffffff;
                      margin: 0px;">
-                            >
+                            
                             <tr>
                                 <th>Subject</th>
                                 <th>Marks</th>
@@ -70,7 +70,7 @@
                         font-weight: 400;
                         line-height: 28px;
                         color: #ffffff;
-                        margin: 0px;">>
+                        margin: 0px;">
                             @foreach ($quiz_result as $data )
                             <tr>
                                 <td >{{$data->quizz_subject }}</td>

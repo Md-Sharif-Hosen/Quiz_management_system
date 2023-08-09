@@ -58,14 +58,15 @@ class ExamController extends Controller
 
     public function exam_store(request $request)
     {
-        // //function_body
+        // dd($request->all());
+;        // //function_body
 
-        foreach ($request->ques_id as $key => $ques_id) {
+        foreach ($request->ques_id as $ques_id) {
             QuizResult::create([
                 'quiz_id' => $request->quiz_id,
                 'user_id' => Auth::user()->id,
                 'ques_id' => $ques_id,
-                'submit_answer' => $request->submit_answer[$key]
+                'submit_answer' => $request->submit_answer[$ques_id]
             ]);
         }
 
@@ -87,7 +88,7 @@ class ExamController extends Controller
         ->count();
         $incorrect = $question - $result;
         // $average=$question/$incorrect;
-        $percentage =100/$question*$result;
+        $percentage = round((100/$question*$result),2);
         // dd($percentage);
        $quiz_subject=Quiz::where('id',$quiz_id)->first();
         return view('forntend.result', compact('result', 'question', 'incorrect','quiz_subject','percentage'));

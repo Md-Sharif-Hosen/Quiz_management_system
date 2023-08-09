@@ -20,7 +20,7 @@ class QuizController extends Controller
         //function_body
         $class = Classes::get();
 
-        $quizz = Quiz::with('quiz_submit_user')->with('question_relations')->paginate(3);
+        $quizz = Quiz::with('quiz_submit_user')->with('question_relations')->paginate(2);
         // dd($quizz->toArray());
         return view('admin.quizzes', compact('class', 'quizz'));
     }

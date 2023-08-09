@@ -26,28 +26,28 @@
                                     <ul>
                                         <li>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="submit_answer[]"
+                                                <input class="form-check-input" type="radio" name="{{ 'submit_answer[' . $data->id . ']' }}"
                                                     value=" {{ $data->optionA }}" id="flexRadioDefault1">
                                                 <label class="form-check-label" for="flexRadioDefault1">
                                                     {{ $data->optionA }}
                                                 </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="submit_answer[]"
+                                                <input class="form-check-input" type="radio" name="{{ 'submit_answer[' . $data->id . ']' }}"
                                                     value=" {{ $data->optionB }}" id="flexRadioDefault2">
                                                 <label class="form-check-label" for="flexRadioDefault2">
                                                     {{ $data->optionB }}
                                                 </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="submit_answer[]"
+                                                <input class="form-check-input" type="radio" name="{{ 'submit_answer[' . $data->id . ']' }}"
                                                     value=" {{ $data->optionC }}" id="flexRadioDefault2">
                                                 <label class="form-check-label" for="flexRadioDefault2">
                                                     {{ $data->optionC }}
                                                 </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="submit_answer[]"
+                                                <input class="form-check-input" type="radio" name="{{ 'submit_answer[' . $data->id . ']' }}"
                                                     value=" {{ $data->optionD }}" id="flexRadioDefault2">
                                                 <label class="form-check-label" for="flexRadioDefault2">
                                                     {{ $data->optionD }}

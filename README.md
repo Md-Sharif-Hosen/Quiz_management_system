@@ -1,64 +1,239 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+![visitors](https://visitor-badge.laobi.icu/badge?page_id=Md-shefat-masum.hiring-portal.readme)
+# QuiZ Management System
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+##  Table of contents
+* [Introduction](#introduction)
+* [Features](#features)
+* [Technologies](#technologies)
+* [Demo Screenshots](#demo-screenshots)
+* [Setup](#setup)
 
-## About Laravel
+##  Introduction
+Welcome to the Quiz Management System documentation.The application should allow teachers to create and manage quizzes, track students' scores, and provide an interactive quiz-taking experience.Students should be able to attend quizzes and receive immediate feedback on their answers. Students will show all quiz topics then select a single topic then submit quiz questions. The quiz questions will show all on one page not single by single. The application should calculate and display their scores upon quiz completion.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+##  Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+This website has two Roles:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+ - Students
+ - Teacher
 
-## Learning Laravel
+ ### Students:
+ - Students will show all quiz topics then select a single topic then submit quiz questions.
+ - Students should be able to attend quizzes
+ - Receive immediate feedback on their answers.
+ 
+ ### Teacher:
+ - can manage all students.
+	 - observe applicant information,and delete
+	 - see the results of the students quiz
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+ - quiz management
+	 - manage Class topics
+		 - create
+		 - edit
+		 - update
+		 - delete
+    - manage quiz topics
+		 - create
+		 - edit
+		 - update
+		 - delete
+	 - manage quiz questions
+		 - create
+		 - edit
+		 - update
+		 - delete
+	 
+## Technologies
+* PHP Laravel
+* mySQL
+* HTML
+* Java Script
+* Bootstrap
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+<!-- ## Demo Screenshots
+<div>
+	<h3> Login </h3>
+	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/demo/login.jpg?raw=true">
+</div>
 
-## Laravel Sponsors
+<div>
+	<h3> Registration </h3>
+	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/demo/registration.jpg?raw=true">
+</div>
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+<div>
+	<h3> User dashboard</h3>
+	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/demo/user dashboard.jpg?raw=true">
+</div>
 
-### Premium Partners
+<div>
+	<h3> Update information</h3>
+	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/demo/update-info.jpg?raw=true">
+</div>
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+<div>
+	<h3>Quiz test</h3>
+	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/demo/quiz-test.jpg?raw=true">
+</div>
 
-## Contributing
+<div>
+	<h3>Quiz result</h3>
+	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/demo/quiz-result.jpg?raw=true">
+</div>
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+<div>
+	<h3>Admin dashboard</h3>
+	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/demo/admin-dashboard.jpg?raw=true">
+</div>
 
-## Code of Conduct
+<div>
+	<h3>Candidate list</h3>
+	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/demo/candidate-list.jpg?raw=true">
+</div>
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+<div>
+	<h3>Quiz topics</h3>
+	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/demo/quiz-topics.jpg?raw=true">
+</div>
+<div>
+	<h3>Quiz preview</h3>
+	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/demo/quiz-preview.jpg?raw=true">
+</div>
 
-## Security Vulnerabilities
+<div>
+	<h3>Select question for quiz</h3>
+	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/demo/select-question-for-quiz.jpg?raw=true">
+</div>
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+<div>
+	<h3>Submit selected question</h3>
+	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/demo/check-selected-question-submit.jpg?raw=true">
+</div>
 
-## License
+<div>
+	<h3>Question Bank</h3>
+	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/demo/question-list.jpg?raw=true">
+</div>
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+<div>
+	<h3>Question create</h3>
+	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/demo/question-create.jpg?raw=true">
+</div>
+
+<div>
+	<h3>Error validation</h3>
+	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/demo/create-validation.jpg?raw=true">
+</div>
+
+<div>
+	<h3>Question edit</h3>
+	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/demo/edit-question.jpg?raw=true">
+</div>
+
+## Setup
+
+####  Installation
+**requirements**
+
+ 1. PHP: 7.3 | ^8.0
+ 2. Laravel : ^8.75
+
+First clone this repository, install the dependencies, and setup your .env file.
+
+**run the commands**
+
+clone project
+```
+git clone https://github.com/Md-shefat-masum/hiring-portal.git
+```
+
+or [Click here to download .zip](https://github.com/Md-shefat-masum/hiring-portal/archive/refs/heads/main.zip)
+
+
+install dependencies
+```
+composer install
+```
+
+swith directory to project
+```
+cd hiring-portal
+```
+
+generate app key
+```
+php artisan key:generate
+```
+
+copy .env.example and paste as .env
+```
+cp .env.example .env
+or copy .env.example .env
+```
+
+open in vs code editor
+```
+code .
+```
+
+open .env file and change db name. 
+**database setup**
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=your_db_name
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+migrate database, and seed
+```
+php artisan migrate:fresh --seed 
+```
+
+after migration reseed, previous data will be remove
+```	
+php artisan db:seed UserSeeder
+php artisan db:seed QuizSeeder
+```
+
+Finally time to launch project, run
+```
+php artisan serve
+```
+the project will open at http://127.0.0.1:8000
+
+or
+```
+php artisan serve --port=8001 | any supported port number
+```
+
+**database seed will generate**
+
+ -  login information for one administrator and ten users.
+ -  30 question tests on HTML, CSS, and Github
+
+####  login credentials
+
+**admin:** 
+email: admin@gmail.com 
+pass: @12345678
+
+##### Candidates login:
+
+|     Email      |   password |                                           
+|----------------|------------|
+|user1@gmail.com |`@12345678` |
+|user2@gmail.com |`@12345678` |
+|user3@gmail.com |`@12345678` |
+|user4@gmail.com |`@12345678` |
+|user5@gmail.com |`@12345678` |
+|user6@gmail.com |`@12345678` |
+|user7@gmail.com |`@12345678` |
+|user8@gmail.com |`@12345678` | 
+|user9@gmail.com |`@12345678` |
+|user10@gmail.com |`@12345678` |
+|user11@gmail.com |`@12345678` | -->
