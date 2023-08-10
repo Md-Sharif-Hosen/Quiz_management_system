@@ -55,7 +55,7 @@ This website has two Roles:
 ## Demo Screenshots
 <div>
 	<h3> Login </h3>
-	<img width="700" src="https://github.com/Md-Sharif-Hosen/Quiz_management_system/blob/main/Demo/login.jpg?raw=true">
+	<img width="700" src="https://github.com/Md-Sharif-Hosen/Quiz_management_system/blob/main/Demo/login-page.jpg?raw=true">
 </div>
 
 <div>
