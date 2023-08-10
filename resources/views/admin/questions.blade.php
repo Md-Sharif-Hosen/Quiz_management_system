@@ -203,7 +203,7 @@
                             <form method="post" action="{{ route('question_update') }}" enctype="multipart/form-data">
                                 @csrf
                                 @method('put')
-                                <input type="text" id="id" name="id">
+                                <input type="hidden" id="id" name="id">
                                 <div class="mb-3 col-sm-3 mb-4">
                                     <label for="recipient-name" class="col-form-label">Quiz Subject</label>
                                     <select class="form-control " name="quiz_id" id="quiz_subject">

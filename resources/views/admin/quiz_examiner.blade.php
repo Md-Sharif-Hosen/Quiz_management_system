@@ -4,10 +4,10 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header">
-                    <h2>Examinner name</h2>
+                    <h2 class="text-center">Candidate list</h2>
                 </div>
                 <div>
-                    <a href="{{ route('quiz') }}" class="btn btn-info">Back</a>
+                    <a href="{{ route('quiz') }}" class="btn btn-info float-end">Back</a>
                 </div>
                 <div class="card-body">
                     <table class="table table-striped table-responsive">
@@ -29,13 +29,13 @@
                                     <td>
 
                                         {{-- @dd($data->user_relation->toArray()) --}}
-                                            {{ $data->name }}
+                                        {{ $data->name }}
 
                                     </td>
                                     <td>
                                         {{-- @dd($data->quiz_relation->toArray() ) --}}
 
-                                            {{ $data->quizz_subject }}
+                                        {{ $data->quizz_subject }}
 
                                     </td>
                                     <td>
@@ -50,7 +50,7 @@
                                             {{ $item->answer }}
                                             {{ $result }}
                                         @endforeach --}}
-                                        <b>{{ $data->marks }}</b>  out off <b>{{ $data->questions }}</b>
+                                        <b>{{ $data->marks }}</b> out off <b>{{ $data->questions }}</b>
 
                                     </td>
                                 </tr>

@@ -60,76 +60,60 @@ This website has two Roles:
 
 <div>
 	<h3> Registration </h3>
-	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/demo/registration.jpg?raw=true">
+	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/demo/register-page.jpg?raw=true">
 </div>
 
 <div>
-	<h3> User dashboard</h3>
-	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/demo/user dashboard.jpg?raw=true">
+	<h3>Students Home Page</h3>
+	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/demo/student-home=page.jpg?raw=true">
 </div>
 
 <div>
-	<h3> Update information</h3>
-	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/demo/update-info.jpg?raw=true">
+	<h3>Student Profile</h3>
+	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/demo/student profile-page.jpg?raw=true">
 </div>
 
 <div>
-	<h3>Quiz test</h3>
-	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/demo/quiz-test.jpg?raw=true">
+	<h3>Quiz List</h3>
+	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/demo/student-quizlist-page.jpg?raw=true">
 </div>
 
 <div>
-	<h3>Quiz result</h3>
-	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/demo/quiz-result.jpg?raw=true">
+	<h3>Quiz Test</h3>
+	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/demo/student-Quizexam-page.jpg?raw=true">
+</div>
+<div>
+	<h3>Quiz Result</h3>
+	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/demo/student-Quizresult-page.jpg?raw=true">
 </div>
 
 <div>
-	<h3>Admin dashboard</h3>
-	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/demo/admin-dashboard.jpg?raw=true">
+	<h3>Teacher dashboard</h3>
+	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/demo/teacher-dashboard-page.jpg?raw=true">
+</div>
+<div>
+	<h3>Teacher Profile</h3>
+	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/demo/teacher-profile.png?raw=true">
+</div>
+
+
+<div>
+	<h3>Class Create,view,edit,delete</h3>
+	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/demo/teacher-class-page.jpg?raw=true">
+</div>
+<div>
+	<h3>Quiz Create,View,Edit,delete</h3>
+	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/demo/teacher-quiz-page.jpg?raw=true">
+</div>
+
+<div>
+	<h3>Question create,view,edit,delete</h3>
+	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/demo/teacher-question-page.jpg?raw=true">
 </div>
 
 <div>
 	<h3>Candidate list</h3>
-	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/demo/candidate-list.jpg?raw=true">
-</div>
-
-<div>
-	<h3>Quiz topics</h3>
-	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/demo/quiz-topics.jpg?raw=true">
-</div>
-<div>
-	<h3>Quiz preview</h3>
-	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/demo/quiz-preview.jpg?raw=true">
-</div>
-
-<div>
-	<h3>Select question for quiz</h3>
-	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/demo/select-question-for-quiz.jpg?raw=true">
-</div>
-
-<div>
-	<h3>Submit selected question</h3>
-	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/demo/check-selected-question-submit.jpg?raw=true">
-</div>
-
-<div>
-	<h3>Question Bank</h3>
-	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/demo/question-list.jpg?raw=true">
-</div>
-
-<div>
-	<h3>Question create</h3>
-	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/demo/question-create.jpg?raw=true">
-</div>
-
-<div>
-	<h3>Error validation</h3>
-	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/demo/create-validation.jpg?raw=true">
-</div>
-
-<div>
-	<h3>Question edit</h3>
-	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/demo/edit-question.jpg?raw=true">
+	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/demo/Candidate list.png?raw=true">
 </div>
 
 ## Setup
@@ -146,10 +130,10 @@ First clone this repository, install the dependencies, and setup your .env file.
 
 clone project
 ```
-git clone https://github.com/Md-shefat-masum/hiring-portal.git
+git clone https://github.com/Md-Sharif-Hosen/Quiz_management_system.git
 ```
 
-or [Click here to download .zip](https://github.com/Md-shefat-masum/hiring-portal/archive/refs/heads/main.zip)
+or [Click here to download .zip](https://github.com/Md-Sharif-Hosen/Quiz_management_system/archive/refs/heads/main.zip)
 
 
 install dependencies
@@ -159,7 +143,7 @@ composer install
 
 swith directory to project
 ```
-cd hiring-portal
+cd Quiz_management_system
 ```
 
 generate app key
@@ -184,21 +168,17 @@ open .env file and change db name.
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=your_db_name
+DB_DATABASE=quiz_management_system
 DB_USERNAME=root
 DB_PASSWORD=
 ```
 
 migrate database, and seed
 ```
-php artisan migrate:fresh --seed 
+php artisan migrate:fresh 
+php artisan migrate --seed  
 ```
 
-after migration reseed, previous data will be remove
-```	
-php artisan db:seed UserSeeder
-php artisan db:seed QuizSeeder
-```
 
 Finally time to launch project, run
 ```
@@ -213,27 +193,29 @@ php artisan serve --port=8001 | any supported port number
 
 **database seed will generate**
 
- -  login information for one administrator and ten users.
- -  30 question tests on HTML, CSS, and Github
+ -  login information for one teacher and ten students.
+ -  23 question tests on C Progrming,Math,Digital computer system And C++
 
 ####  login credentials
 
-**admin:** 
-email: admin@gmail.com 
-pass: @12345678
+**teacher:** 
+email: mdsharifkhan762@gmail.com 
+pass: 123456789
 
-##### Candidates login:
+##### STUDENT login:
 
 |     Email      |   password |                                           
 |----------------|------------|
-|user1@gmail.com |`@12345678` |
-|user2@gmail.com |`@12345678` |
-|user3@gmail.com |`@12345678` |
-|user4@gmail.com |`@12345678` |
-|user5@gmail.com |`@12345678` |
-|user6@gmail.com |`@12345678` |
-|user7@gmail.com |`@12345678` |
-|user8@gmail.com |`@12345678` | 
-|user9@gmail.com |`@12345678` |
-|user10@gmail.com |`@12345678` |
-|user11@gmail.com |`@12345678` |
+|tarek@gmail.com |`123456789` |
+|sagir@gmail.com |`123456789` |
+|rana@gmail.com |`123456789` |
+|mukitrana@gmail.com |`123456789` |
+|mumin@gmail.com |`123456789` |
+|ethian@gmail.com |`123456789` |
+|eyamin@gmail.com |`123456789` |
+|mahbub@gmail.com |`123456789` | 
+|sajid@gmail.com|`123456789` |
+|masum@gmail.com |`123456789` |
+
+## License
+    This project is licensed under the MIT License.
