@@ -54,10 +54,13 @@ This website has two Roles:
 
 ## Demo Screenshots
 <div>
+	<h3>Entity Relationship Diagram </h3>
+	<img width="700" src="https://github.com/Md-Sharif-Hosen/Quiz_management_system/blob/main/Demo/ER Diagram.jpg?raw=true">
+</div>
+<div>
 	<h3> Login </h3>
 	<img width="700" src="https://github.com/Md-Sharif-Hosen/Quiz_management_system/blob/main/Demo/login-page.jpg?raw=true">
 </div>
-
 <div>
 	<h3> Registration </h3>
 	<img width="700" src="https://github.com/Md-Sharif-Hosen/Quiz_management_system/blob/main/Demo/register-page.jpg?raw=true">
