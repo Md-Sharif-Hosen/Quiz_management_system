@@ -60,60 +60,60 @@ This website has two Roles:
 
 <div>
 	<h3> Registration </h3>
-	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/Demo/register-page.jpg?raw=true">
+	<img width="700" src="https://github.com/Md-Sharif-Hosen/Quiz_management_system/blob/main/Demo/register-page.jpg?raw=true">
 </div>
 
 <div>
 	<h3>Students Home Page</h3>
-	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/Demo/student-home=page.jpg?raw=true">
+	<img width="700" src="https://github.com/Md-Sharif-Hosen/Quiz_management_system/blob/main/Demo/student-home=page.jpg?raw=true">
 </div>
 
 <div>
 	<h3>Student Profile</h3>
-	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/Demo/student profile-page.jpg?raw=true">
+	<img width="700" src="https://github.com/Md-Sharif-Hosen/Quiz_management_system/blob/main/Demo/student profile-page.jpg?raw=true">
 </div>
 
 <div>
 	<h3>Quiz List</h3>
-	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/Demo/student-quizlist-page.jpg?raw=true">
+	<img width="700" src="https://github.com/Md-Sharif-Hosen/Quiz_management_system/blob/main/Demo/student-quizlist-page.jpg?raw=true">
 </div>
 
 <div>
 	<h3>Quiz Test</h3>
-	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/Demo/student-Quizexam-page.jpg?raw=true">
+	<img width="700" src="https://github.com/Md-Sharif-Hosen/Quiz_management_system/blob/main/Demo/student-Quizexam-page.jpg?raw=true">
 </div>
 <div>
 	<h3>Quiz Result</h3>
-	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/Demo/student-Quizresult-page.jpg?raw=true">
+	<img width="700" src="https://github.com/Md-Sharif-Hosen/Quiz_management_system/blob/main/Demo/student-Quizresult-page.jpg?raw=true">
 </div>
 
 <div>
 	<h3>Teacher dashboard</h3>
-	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/Demo/teacher-dashboard-page.jpg?raw=true">
+	<img width="700" src="https://github.com/Md-Sharif-Hosen/Quiz_management_system/blob/main/Demo/teacher-dashboard-page.jpg?raw=true">
 </div>
 <div>
 	<h3>Teacher Profile</h3>
-	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/Demo/teacher-profile.png?raw=true">
+	<img width="700" src="https://github.com/Md-Sharif-Hosen/Quiz_management_system/blob/main/Demo/teacher-profile.png?raw=true">
 </div>
 
 
 <div>
 	<h3>Class Create,view,edit,delete</h3>
-	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/Demo/teacher-class-page.jpg?raw=true">
+	<img width="700" src="https://github.com/Md-Sharif-Hosen/Quiz_management_system/blob/main/Demo/teacher-class-page.jpg?raw=true">
 </div>
 <div>
 	<h3>Quiz Create,View,Edit,delete</h3>
-	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/Demo/teacher-quiz-page.jpg?raw=true">
+	<img width="700" src="https://github.com/Md-Sharif-Hosen/Quiz_management_system/blob/main/Demo/teacher-quiz-page.jpg?raw=true">
 </div>
 
 <div>
 	<h3>Question create,view,edit,delete</h3>
-	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/Demo/teacher-question-page.jpg?raw=true">
+	<img width="700" src="https://github.com/Md-Sharif-Hosen/Quiz_management_system/blob/main/Demo/teacher-question-page.jpg?raw=true">
 </div>
 
 <div>
 	<h3>Candidate list</h3>
-	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/Demo/Candidate list.png?raw=true">
+	<img width="700" src="https://github.com/Md-Sharif-Hosen/Quiz_management_system/blob/main/Demo/Candidate list.png?raw=true">
 </div>
 
 ## Setup
