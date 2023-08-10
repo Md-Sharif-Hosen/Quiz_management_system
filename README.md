@@ -1,4 +1,4 @@
-![visitors](https://visitor-badge.laobi.icu/badge?page_id=Md-shefat-masum.hiring-portal.readme)
+![visitors](https://visitor-badge.laobi.icu/badge?page_id=Md-Sharif-Hosen/Quiz_management_system.readme)
 # QuiZ Management System
 
 ##  Table of contents
@@ -52,10 +52,10 @@ This website has two Roles:
 * Java Script
 * Bootstrap
 
-<!-- ## Demo Screenshots
+## Demo Screenshots
 <div>
 	<h3> Login </h3>
-	<img width="700" src="https://github.com/Md-shefat-masum/hiring-portal/blob/main/demo/login.jpg?raw=true">
+	<img width="700" src="https://github.com/Md-Sharif-Hosen/Quiz_management_system/blob/main/Demo/login.jpg?raw=true">
 </div>
 
 <div>
@@ -236,4 +236,4 @@ pass: @12345678
 |user8@gmail.com |`@12345678` | 
 |user9@gmail.com |`@12345678` |
 |user10@gmail.com |`@12345678` |
-|user11@gmail.com |`@12345678` | -->
+|user11@gmail.com |`@12345678` |

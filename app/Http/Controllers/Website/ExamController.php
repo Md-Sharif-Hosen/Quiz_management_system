@@ -36,6 +36,7 @@ class ExamController extends Controller
     public function quiz_userid_store(request $request)
     {
         //function_body
+        
         // $quizz=Quiz::first();
         $quiz_userid_save=new UserQuiz();
         $quiz_userid_save->user_id=Auth::user()->id;
