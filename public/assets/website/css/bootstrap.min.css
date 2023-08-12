@@ -164,6 +164,12 @@ a {
     background-color: transparent;
     -webkit-text-decoration-skip: objects;
 }
+a.quiz{
+    color: #d1d7df;
+}
+a.quiz:hover{
+    color: #69798f;
+}
 a:hover {
     color: #0056b3;
     text-decoration: underline;

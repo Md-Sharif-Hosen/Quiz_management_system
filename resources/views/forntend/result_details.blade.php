@@ -1,15 +1,19 @@
 @extends('forntend.layouts.website')
 @section('maincontent')
-    <section style=" background-color:#d2b895c2;border-radius: 41px">
-        <div class="col-md-6 col-lg-12">
-            <div class="container">
-                <div>
-                    <h2 class="text-center">Subject:{{ $quiz->quizz_subject }}</h2>
-                </div>
+    <section id="slider-part-3" class=""
+        style="background-image: url({{ asset('assets/website') }}/images/slider/s-3.jpg)">
+        <section style=" background-color:#d2b895c2;border-radius: 41px">
+            <div class="col-md-6 col-lg-12">
+                <div class="container">
+                    <div>
+                        <h2 class="text-center">Subject:{{ $quiz->quizz_subject }}</h2>
+                    </div>
 
-                    <a class="btn btn-info justify-content-end" href="{{ route('result', $quiz->id) }}"><h6>Back</h6> </a>
+                    <a class="btn btn-info justify-content-end" href="{{ route('result', $quiz->id) }}">
+                        <h6>Back</h6>
+                    </a>
                 </div>
-                <section style="    padding-left: 220px;
+                <section  style="    padding-left: 220px;
                 padding-top: 55px;}">
                     @foreach ($result_details as $key => $data)
                         <div style="padding: 10px">
@@ -17,8 +21,8 @@
                                 <h4>{{ $key + 1 }}.{{ $data->question_title }}</h4>
                             </ul>
                             <ul>
-                                <li>
-                                    <div class="form-check">
+                                <li >
+                                    <div class="form-check ">
                                         <input class="form-check-input" type="checkbox"
                                             {{ $data->submit_answer == $data->optionA ? 'checked' : '' }}
                                             value="{{ $data->optionA }}" id="flexRadioDefault1">
@@ -66,8 +70,10 @@
                             </ul>
                         </div>
                     @endforeach
+                    {{ $result_details->links() }}
                 </section>
             </div>
-        </div>
+            </div>
+        </section>
     </section>
 @endsection

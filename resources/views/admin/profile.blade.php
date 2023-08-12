@@ -71,7 +71,7 @@
 
                     </div>
                 </div>
-                <div class="col-lg-12
+                {{-- <div class="col-lg-12
                         card card-style1">
                     <div class="row">
                         <div class="col-lg-12 mb-4 mb-sm-5">
@@ -136,7 +136,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>

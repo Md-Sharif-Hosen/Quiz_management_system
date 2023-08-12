@@ -77,7 +77,7 @@
                         <form class="d-none d-lg-block app-search" style="border: 2px">
                             <div class="position-relative">
                                 <input type="search"
-                                    style="border: 1px solid rgb(141, 127, 127);
+                                    style="border: 1px solid rgb(209 178 254);
                                         right: 80px;
                                         position: relative;
                                 padding-left: 40px;

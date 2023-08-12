@@ -36,7 +36,7 @@ class ExamController extends Controller
     public function quiz_userid_store(request $request)
     {
         //function_body
-        
+
         // $quizz=Quiz::first();
         $quiz_userid_save=new UserQuiz();
         $quiz_userid_save->user_id=Auth::user()->id;
@@ -100,7 +100,7 @@ class ExamController extends Controller
         $result_details=QuizResult::join('questions', 'quiz_results.ques_id', '=', 'questions.id')
         ->select('quiz_results.*','questions.*')
         ->where('quiz_results.quiz_id','=',$id)
-        ->get();
+       ->paginate(2);
         $quiz=Quiz::where('id',$id)->first();
         // dd($result_details->toArray());
         // dd($quiz);

@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!--====== Title ======-->
-    <title>Edubin - LMS Education HTML Template</title>
+    <title>Edubin -</title>
 
     <!--====== Favicon Icon ======-->
     <link rel="shortcut icon" href="{{ asset('assets/website') }}/images/favicon.png" type="image/png">
@@ -94,15 +94,13 @@
                                 <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                                     <ul class="navbar-nav ml-auto">
                                         @auth
-                                            <li class="nav-item">
+                                            {{-- <li class="nav-item">
                                                 <a class="active" href="{{ route('home') }}">Home</a>
                                                 <ul class="sub-menu">
-                                                    {{-- <li><a href="">Home 01</a></li>
-                                                    <li><a href="{{ asset('assets/website') }}/index-3.html">Home 02</a></li> --}}
-                                                    {{-- <li><a class="active" href="{{ asset('assets/website') }}/index-4.html">Home 03</a></li> --}}
+
                                                 </ul>
-                                            </li>
-                                            <li class="nav-item">
+                                            </li> --}}
+                                            {{-- <li class="nav-item">
                                                 <a href="{{ route('about') }}">About us</a>
                                             </li>
                                             <li class="nav-item">
@@ -110,13 +108,13 @@
                                             </li>
                                             <li class="nav-item">
                                                 <a href="{{ route('teacher') }}">Our teachers</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="{{ route('examlist') }}">Exam</a>
-                                            </li>
-                                            <li class="nav-item">
+                                            </li> --}}
+                                            {{-- <li class="nav-item">
+                                                <a href="{{ route('examlist') }}">Quizz</a>
+                                            </li> --}}
+                                            {{-- <li class="nav-item">
                                                 <a href="{{ route('contacts') }}">Contact Us</a>
-                                            </li>
+                                            </li> --}}
                                         </ul>
                                     </div>
                                     <div class="dropdown d-inline-block">
@@ -150,10 +148,10 @@
                                             </button>
                                             <div class="dropdown-menu dropdown-menu-end">
                                                 <!-- item-->
-                                                <a class="dropdown-item" href="{{ route('profile.user') }}"><i
+                                                {{-- <a class="dropdown-item" href="{{ route('profile.user') }}"><i
                                                         class="bx bx-user font-size-16 align-middle me-1"></i> <span
                                                         key="t-profile">My
-                                                        Profile</span></a>
+                                                        Profile</span></a> --}}
 
                                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                                     onclick="event.preventDefault();
@@ -181,7 +179,7 @@
                                         {{-- <li><a class="active" href="{{ asset('assets/website') }}/index-4.html">Home 03</a></li> --}}
                                     </ul>
                                 </li>
-                                <li class="nav-item">
+                                {{-- <li class="nav-item">
                                     <a href="{{ route('about') }}">About us</a>
                                 </li>
                                 <li class="nav-item">
@@ -195,7 +193,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ route('contacts') }}">Contact Us</a>
-                                </li>
+                                </li> --}}
                                 <li class="nav-item">
                                     <a class="" href="{{ route('login') }}">Login</a>
                                 </li>

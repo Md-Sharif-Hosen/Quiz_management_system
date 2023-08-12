@@ -30,7 +30,7 @@
         <div class="col md-6 sm-3 lg-12">
             <div class="card ">
                 <div class="card-header justify-content-center">
-                    <h2 class="text-center" style="color: rgb(28 64 0)">Question list</h2>
+                    <h2 class="text-center" style="color: rgb(7 143 131)"><b>Question list</b></h2>
                 </div>
                 <div class="d-flex justify-content-between">
 
