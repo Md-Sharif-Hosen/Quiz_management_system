@@ -53,21 +53,20 @@ class ExamController extends Controller
         // $quiz->update();
 
         $question = Question::where('quiz_id', $quizz)->get();
-        //dd($quiz);
+        // dd($quiz);
         return view('forntend.exam', compact('quiz', 'question'));
     }
 
     public function exam_store(request $request)
     {
         // dd($request->all());
-;        // //function_body
-
-        foreach ($request->ques_id as $ques_id) {
+        foreach ($request->ques_id as $key =>$ques_id) {
+            $submitAnswer = implode(',',$request->submit_answer[$key]);
             QuizResult::create([
                 'quiz_id' => $request->quiz_id,
                 'user_id' => Auth::user()->id,
                 'ques_id' => $ques_id,
-                'submit_answer' => $request->submit_answer[$ques_id]
+                'submit_answer' => $submitAnswer
             ]);
         }
 
@@ -100,7 +99,7 @@ class ExamController extends Controller
         $result_details=QuizResult::join('questions', 'quiz_results.ques_id', '=', 'questions.id')
         ->select('quiz_results.*','questions.*')
         ->where('quiz_results.quiz_id','=',$id)
-       ->paginate(2);
+       ->get();
         $quiz=Quiz::where('id',$id)->first();
         // dd($result_details->toArray());
         // dd($quiz);

@@ -13,7 +13,7 @@
                         <h6>Back</h6>
                     </a>
                 </div>
-                <section  style="    padding-left: 220px;
+                <section style="    padding-left: 220px;
                 padding-top: 55px;}">
                     @foreach ($result_details as $key => $data)
                         <div style="padding: 10px">
@@ -21,39 +21,48 @@
                                 <h4>{{ $key + 1 }}.{{ $data->question_title }}</h4>
                             </ul>
                             <ul>
-                                <li >
-                                    <div class="form-check ">
+                                <li>
+                                    <div class="form-check">
                                         <input class="form-check-input" type="checkbox"
-                                            {{ $data->submit_answer == $data->optionA ? 'checked' : '' }}
-                                            value="{{ $data->optionA }}" id="flexRadioDefault1">
-                                        <label class="form-check-label" for="flexRadioDefault1">
+                                            {{ in_array($data->optionA, explode(',', $data->submit_answer)) ? 'checked disabled' : '' }}
+                                            value="{{ $data->optionA }}" id="optionA">
+                                        <label class="form-check-label"
+                                            style="{{ in_array($data->optionA, explode(',', $data->submit_answer)) ? 'color: #2fffdc; font-weight: bold;' : '' }}"
+                                            for="optionA">
                                             {{ $data->optionA }}
                                         </label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="flexRadioDefault2"
-                                            {{ $data->submit_answer == $data->optionB ? 'checked' : '' }}
-                                            value="{{ $data->optionB }}">
-                                        <label class="form-check-label" for="flexRadioDefault2">
+                                            {{ in_array($data->optionB, explode(',', $data->submit_answer)) ? 'checked disabled' : '' }}
+                                            value="{{ $data->optionB }}" id="optionB">
+                                        <label class="form-check-label"
+                                            style="{{ in_array($data->optionB, explode(',', $data->submit_answer)) ? 'color: #2fffdc; font-weight: bold;' : '' }}"
+                                            for="optionB">
                                             {{ $data->optionB }}
                                         </label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="flexRadioDefault2"
-                                            {{ $data->submit_answer == $data->optionC ? 'checked' : '' }}
-                                            value="{{ $data->optionC }}">
-                                        <label class="form-check-label" for="flexRadioDefault2">
+                                            {{ in_array($data->optionC, explode(',', $data->submit_answer)) ? 'checked disabled' : '' }}
+                                            value="{{ $data->optionC }}" id="optionC">
+                                        <label class="form-check-label"
+                                            style="{{ in_array($data->optionC, explode(',', $data->submit_answer)) ? 'color: #2fffdc; font-weight: bold;' : '' }}"
+                                            for="optionC">
                                             {{ $data->optionC }}
                                         </label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="flexRadioDefault2"
-                                            {{ $data->submit_answer == $data->optionD ? 'checked' : '' }}
-                                            value="{{ $data->optionD }}">
-                                        <label class="form-check-label" for="flexRadioDefault2">
+                                            {{ in_array($data->optionD, explode(',', $data->submit_answer)) ? 'checked disabled' : '' }}
+                                            value="{{ $data->optionD }}" id="optionD">
+                                        <label class="form-check-label"
+                                            style="{{ in_array($data->optionD, explode(',', $data->submit_answer)) ? 'color: #2fffdc; font-weight: bold;' : '' }}"
+                                            for="optionD">
                                             {{ $data->optionD }}
                                         </label>
                                     </div>
+
 
                                     @if ($data->submit_answer == $data->answer)
                                         <h5 class="alrt" style="color:rgb(5, 165, 32)">Correct</h5>
@@ -70,7 +79,8 @@
                             </ul>
                         </div>
                     @endforeach
-                    {{ $result_details->links() }}
+
+                    {{-- {{ $result_details->links() }} --}}
                 </section>
             </div>
             </div>

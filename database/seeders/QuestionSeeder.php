@@ -23,7 +23,7 @@ class QuestionSeeder extends Seeder
             "optionB"=>"-2",
             "optionC"=>"-1",
             "optionD"=>"2",
-            "answer"=>"-2"
+            "answer"=>"1,-2"
         ]);
         Question::create([
             'quiz_id'=>1,
@@ -32,7 +32,7 @@ class QuestionSeeder extends Seeder
             "optionB"=>"$",
             "optionC"=>"##",
             "optionD"=>"/",
-            "answer"=>"/"
+            "answer"=>"/,$"
         ]);
         Question::create([
             'quiz_id'=>1,
@@ -68,7 +68,7 @@ class QuestionSeeder extends Seeder
             "optionB"=>"666",
             "optionC"=>"300",
             "optionD"=>"100",
-            "answer"=>"666"
+            "answer"=>"666,100"
         ]);
         Question::create([
             'quiz_id'=>2,
@@ -86,7 +86,7 @@ class QuestionSeeder extends Seeder
             "optionB"=>"643",
             "optionC"=>"145",
             "optionD"=>"130",
-            "answer"=>"216"
+            "answer"=>"216,130"
         ]);
         Question::create([
             'quiz_id'=>2,
@@ -176,7 +176,7 @@ class QuestionSeeder extends Seeder
             "optionB"=>"protected",
             "optionC"=>"None of the above",
             "optionD"=>"private",
-            "answer"=>"private"
+            "answer"=>"public,private"
         ]);
         Question::create([
             'quiz_id'=>4,
