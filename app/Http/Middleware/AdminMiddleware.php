@@ -23,7 +23,7 @@ class AdminMiddleware
                 return $next($request);
                 // return redirect('/dashboard')->with('message', 'Access denied you are not admin');
             } else {
-                return redirect('/')->with('message', 'Access denied you are not admin');
+                return redirect('/')->with('message', 'Sign In Successfully');
             }
         } else {
             return redirect('/login')->with('message', 'login to access website');

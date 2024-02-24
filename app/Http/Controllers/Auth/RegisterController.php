@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
@@ -49,10 +50,21 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
+    public function register(Request $request)
+    {
+        // Validate the request data
+        $this->validator($request->all())->validate();
+
+        // Create the user
+        $user = $this->create($request->all());
+
+        // Redirect with success message
+        return redirect()->route('login')->with('success', 'Registration complete');
+    }
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'min:5', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'phone_number' => ['required', 'min:11'],
@@ -73,13 +85,17 @@ class RegisterController extends Controller
         if (request()->hasFile('image')) {
             $data['image'] = Storage::put('/user', request()->file('image'));
         }
-        return User::create([
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'phone_number' => $data['phone_number'],
             'role_id' => 2,
-            'image' => $data['image'],
+            'image' => $data['image'] ?? null,
             'password' => Hash::make($data['password']),
+
         ]);
+
+        session()->flash('success', 'Registration complete');
+        return $user;
     }
 }

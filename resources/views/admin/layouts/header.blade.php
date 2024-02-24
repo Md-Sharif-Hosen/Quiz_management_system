@@ -31,8 +31,6 @@
 
     <!-- Begin page -->
     <div id="layout-wrapper">
-
-
         <header id="page-topbar">
             <div class="navbar-header">
                 <div class="d-flex">
@@ -261,11 +259,9 @@
                                     </li>
                                 @endif
                             @else
-
                                 <img class="rounded-circle header-profile-user" src="/{{ Auth::user()->image }}"
                                     alt="Header Avatar">
-                                <span class="d-none d-xl-inline-block ms-1"
-                                    key="t-henry">{{ Auth::user()->name }}</span>
+                                <span class="d-none d-xl-inline-block ms-1" key="t-henry">{{ Auth::user()->name }}</span>
                                 <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                             </button>
                             <div class="dropdown-menu dropdown-menu-end">

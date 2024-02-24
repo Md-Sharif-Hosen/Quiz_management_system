@@ -22,7 +22,7 @@ class StudentMiddleware
             if (Auth::user()->role_id == 2) {
                 return $next($request);
             } else {
-                return redirect('/dashboard')->with('message', 'Access denied you are not Student');
+                return redirect('/dashboard')->with('message', 'Sign In Successfully');
 
             }
         } else {

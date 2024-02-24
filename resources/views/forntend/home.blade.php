@@ -1,9 +1,7 @@
-@extends("forntend.layouts.website")
+@extends('forntend.layouts.website')
 
-@section("content")
-{{-- <section id="slider-part-3" class="bg_cover"  style="background-image: url({{ asset('assets/website') }}/images/slider/s-3.jpg)"> --}}
-
-
+@section('content')
+    {{-- <section id="slider-part-3" class="bg_cover"  style="background-image: url({{ asset('assets/website') }}/images/slider/s-3.jpg)"> --}}
 
     <link rel="stylesheet" href="{{ asset('assets/website') }}/css/profile.css">
     <section class="bg-light bg_cover" style="background-image: url({{ asset('assets/website') }}/images/background.webp)">
@@ -11,6 +9,14 @@
             <div class="row">
                 <div class="col-lg-12 mb-4 mb-sm-5">
                     <div class="card card-style1 border-0">
+                        @if (session()->get('message'))
+                            <script>
+                                Toast.fire({
+                                    icon: "success",
+                                    title: '{{ session()->get('message') }}'
+                                })
+                            </script>
+                        @endif
                         <div class="card-body p-1-9 p-sm-2-3 p-md-6 p-lg-7">
                             <div class="row align-items-center">
                                 <div class="col-lg-6 mb-4 mb-lg-0">
@@ -42,8 +48,10 @@
 
                                     </ul>
 
-                                    <div class="d-lg-inline-block py-1-9 px-1-9 px-sm-6 mb-1-9 " style="background-color: #236d6c;border-radius:144px">
-                                        <h3 class="h2"><a href="{{ route('examlist') }}" class="quiz">Quizz <br>Test</a></h3>
+                                    <div class="d-lg-inline-block py-1-9 px-1-9 px-sm-6 mb-1-9 "
+                                        style="background-color: #236d6c;border-radius:144px">
+                                        <h3 class="h2"><a href="{{ route('examlist') }}" class="quiz">Quizz
+                                                <br>Test</a></h3>
                                     </div>
                                 </div>
                             </div>
@@ -68,17 +76,18 @@
                                 <th>Marks</th>
                             </tr>
                         </thead>
-                        <tbody   style="
+                        <tbody
+                            style="
                         font-size: 16px;
                         font-weight: 400;
                         line-height: 28px;
                         color: #ffffff;
                         margin: 0px;">
-                            @foreach ($quiz_result as $data )
-                            <tr>
-                                <td >{{$data->quizz_subject }}</td>
-                                <td>{{$data->marks }} Out off {{$data->questions }}</td>
-                            </tr>
+                            @foreach ($quiz_result as $data)
+                                <tr>
+                                    <td>{{ $data->quizz_subject }}</td>
+                                    <td>{{ $data->marks }} Out off {{ $data->questions }}</td>
+                                </tr>
                             @endforeach
                         </tbody>
                     </table>
@@ -172,8 +181,4 @@
             </div>
         </div>
     </section>
-
-
 @endsection
-
-
